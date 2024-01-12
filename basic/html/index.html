@@ -352,14 +352,16 @@
   </footer> -->
 
 
-  <h1>폼 (Form)</h1>
+  <!-- <h1>폼 (Form)</h1>
   <p>서버에 제출하는 데이터를 포함한다</p>
 
   <form action="/search.php">
     <h1>Google</h1>
-    <input type="search" name="q" placeholder="구글 검색">
+      <input type="search" name="q" placeholder="구글 검색">
     <button type="submit">검색</button>
   </form>
+
+  <input type="text">
 
   <pre>
     1 form 
@@ -388,10 +390,176 @@
     - 애트리뷰트
     1) type
     버튼의 목적
+  </pre> -->
+
+
+  <!-- <h1>로그인 폼</h1>
+
+  <pre>
+    1 label 
+    input에 대한 설명. input과 label은 짝을 이룬다.
+
+    - 애트리뷰트
+    1) for
+    input과 label을 연결한다
+
+    2 checkbox
+    동의/비동의 옵션을 제공한다
   </pre>
 
+  <form action="/login.php">
+    <div>
+      <label for="username">아이디</label>
+      <input type="text" name="username" id="username">
+    </div>
+
+    <div>
+      <label for="password">비밀번호</label>
+      <input type="password" name="password" id="password">
+    </div>
+
+    <div>
+      <input type="checkbox" name="save" id="save">
+      <label for="save">로그인 정보 저장</label>
+    </div>
+
+    <button type="submit">로그인</button>
+  </form> -->
 
 
+  <!-- <h1>설문조사 폼</h1>
+
+  <pre>
+    1 select & option
+    선택지를 제공한다
+
+    - 애트리뷰트
+    1) value - 서버에 제출되는 데이터
+    2) disabled - 엘리먼트를 비활성화시킨다
+
+    2 textarea
+    긴 텍스트를 입력할 수 있다
+
+    - 애트리뷰트
+    1) cols(columns, 열) - 한 줄에 입력할 수 있는 글자의 수
+    2) rows(행) - 입력할 수 있는 줄의 수
+
+    3 radio 
+    라디오 버튼 중 한개만 선택할 수 있다
+    버튼을 그룹화하기 위해서는 name을 일치시켜야 한다
+
+    - 애트리뷰트
+    1) checked
+    페이지가 처음 열렸을 때 선택된 상태로 만든다
+  </pre>
+
+  <form action="/survey.php">
+    <h3>
+      <label for="gender">성별</label>
+    </h3>
+    <select name="gender" id="gender">
+      <option value="male" disabled>남자</option>
+      <option value="female">여자</option>
+      <option value="gay">게이</option>
+    </select>
+
+    <h3>
+      <label for="gay">만약 성별에서 3번을 골랐다면 언제부터였습니까?</label>
+    </h3>
+    <textarea name="" id="gay" cols="30" rows="5" placeholder="힘내"></textarea>
+
+    <h3>나이</h3>
+    <input type="radio" name="age" id="1020" checked>
+    <label for="1020">10 - 20대</label>
+    <input type="radio" name="age" id="3040">
+    <label for="3040">30 - 40대</label>
+    <input type="radio" name="age" id="50-">
+    <label for="50-">50대 이상</label>
+
+    <p>
+      <button type="submit">제출</button>
+    </p>
+
+  </form> -->
+
+  <!-- <h1>img</h1>
+  <p>image (이미지)</p>
+
+  <pre>
+    애트리뷰트
+    
+    1 src (source)
+    이미지의 소스(주소)
+
+    2 alt(alternative)
+    이미지에 대한 설명
+
+    3 width
+    이미지의 넓이(width)
+  </pre>
+
+  <img 
+    src="https://live.staticflickr.com/4158/34512763786_a16577b036_b.jpg" 
+    alt="HTML-Tatoo"
+    width="400"
+  > -->
+
+
+  <!-- <h1>svg</h1>
+  <pre>
+    Scalable Vector Graphic의 약자
+    수학적인 방법으로 그래픽을 표현한다
+    확대해도 깨지지 않는다
+    로고나 아이콘 등에 사용된다
+  </pre>
+
+  <svg height="150" width="200">
+    <ellipse
+      cx="100" 
+      cy="75" 
+      rx="90" 
+      ry="60" 
+      fill="#333" 
+    />
+
+    <text 
+      fill="#fff" 
+      font-size="45" 
+      font-family="Verdana" 
+      x="35" 
+      y="90"
+    >
+      LOGO
+    </text>
+  </svg> -->
+
+
+  <!-- <h1>HTML 엔티티 (Entity, 개체)</h1>
+  <pre>
+    문서에서 예약된 문자나 이모티콘 등을 표현할 때 사용된다
+
+    * 예약된 문자 - html코드로 사용중인 문자
+  </pre>
+
+  <h3>엔티티 네임</h3>
+  <ul>
+    <li>1 &lt; 2</li>
+    <li>&copy;</li>
+  </ul>
+
+  <h3>엔티티 넘버</h3>
+  <ul>
+    <li>&#128512;</li>
+    <li>&#128128;</li>
+  </ul> -->
+
+  
+  <!-- <h1>시멘틱과 넌시멘틱 HTML</h1>
+  <pre>
+    시멘틱 HTML - 시멘틱 태그로 이루어진 HTML 문서
+
+    * 시멘틱 태그 - 태그의 이름이 목적과 같은 태그
+  </pre> -->
 
 
   
