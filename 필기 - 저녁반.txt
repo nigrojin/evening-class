@@ -1,0 +1,24 @@
+on / off
+
+
+lt (less than) <
+보다 작다
+
+gt (greater than) >
+보다 크다
+
+
+개발자도구 열기 (크롬 기준)
+F12
+
+
+글자 두껍게 처리하는 CSS 속성
+font-weight: 700
+
+
+
+
+
+
+
+
