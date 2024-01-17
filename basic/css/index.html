@@ -935,8 +935,454 @@
     laborum iusto distinctio eos assumenda ut nulla repellat.
   </div> -->
 
+  <!-- <h1>Q. Display</h1>
 
+  <style>
+    #ireland .item {
+      width: 50px;
+      height: 100px;
+      display: inline-block;
+    }
+
+    #netherlands .item {
+      width: 160px;
+      height: 40px;
+      display: block;
+    }
+
+    .bg-green {
+      background-color: green;
+    }
+
+    .bg-white {
+      background-color: #fff;
+    }
+
+    .bg-gold {
+      background-color: gold;
+    }
+
+    .bg-red {
+      background-color: red;
+    }
+
+    .bg-blue {
+      background-color: blue;
+    }
+  </style>
+
+  <h3>Ireland</h3>
+  <div id="ireland">
+    <div class="item bg-green"></div>
+    <div class="item bg-white"></div>
+    <div class="item bg-gold"></div>
+  </div>
+
+  <h3>Netherlands</h3>
+  <div id="netherlands">
+    <div class="item bg-red"></div>
+    <div class="item bg-white"></div>
+    <div class="item bg-blue"></div>
+  </div> -->
+
+
+  <!-- <h1>box-sizing</h1>
+  <p>엘리먼트의 크기 조절</p>
+
+  <pre>
+    1. content-box 
+    패딩과 border가 주어진 크기 밖으로 적용된다
+
+    2. border-box
+    패딩과 border가 주어진 크기 안으로 적용된다
+    엘리먼트의 크기를 조작하는 것이 더쉽다
+  </pre>
+
+  <style>
+    .item {
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+      padding: 0.5rem;
+      background-color: #ddd;
+    }
+
+    .content-box {
+      box-sizing: content-box;
+    }
+
+    .border-box {
+      box-sizing: border-box;
+    }
+  </style>
+
+  <h3>box sizing: content box</h3>
+  <div class="item content-box">118 x 118</div>
+
+  <h3>box sizing: border box</h3>
+  <div class="item border-box">100 x 100</div> -->
+
+
+  <!-- <h1>overflow</h1>
+  <p>넘치는 컨텐츠 처리 방법</p>
+
+  <style>
+    .container {
+      border: 1px solid;
+      width: 200px;
+      height: 100px;
+    }
+
+    .overflow-hidden {
+      /* 넘치는 부분을 숨긴다 */
+      overflow: hidden;
+    }
+
+    .overflow-auto {
+      /* 넘치는 경우 스크롤을 생성한다 */
+      overflow: auto;
+    }
+
+    .overflow-visible {
+      /* 넘치는 경우 보이게 한다 */
+      overflow: visible;
+    }
+  </style>
   
+  <h3>overflow: hidden</h3>
+  <div class="container overflow-hidden">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  
+  <h3>overflow: auto</h3>
+  <div class="container overflow-auto">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>
+  
+  <h3>overflow: visible</h3>
+  <div class="container overflow-visible">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Hic maxime soluta provident nihil dolore accusamus, vitae adipisci, 
+    et repudiandae, eum aliquid inventore ratione blanditiis harum officia animi corrupti eligendi facere.
+  </div>   -->
+
+
+  <!-- <h1>white-space</h1>
+  <p>엘리먼트의 여백 처리 방법</p>
+
+  <style>
+    .container {
+      border: 1px solid;
+      width: 150px;
+    }
+
+    .item {
+      display: inline-block;
+      width: 100px; 
+      background-color: #ddd;
+    }
+
+    .whitespace-normal {
+      /* 
+        컨테이너가 아이템을 감싼다 
+
+        감싼다(wrap) - 컨테이너의 넓이가 부족할 때
+        아이템을 아래로 떨어뜨린다
+      */
+      white-space: normal;
+    }
+
+    .whitespace-nowrap {
+      /* 
+        컨테이너가 아이템을 감싸지 않는다
+      */
+      white-space: nowrap;
+    }
+  </style>
+
+  <h3>white space: normal</h3>
+  <div class="container whitespace-normal">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div>
+
+  <h3>white space: nowrap</h3>
+  <div class="container whitespace-nowrap">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+
+  <!-- <h1>position</h1>
+  <pre>
+    엘리먼트의 위치 선정 방법
+
+    1. static
+    2. relative
+    3. absolute
+    4. fixed
+  </pre> -->
+
+
+  <!-- <h1>position: static</h1>
+  <p>엘리먼트가 움직이지 않는다(static)</p>
+
+  <style>
+    .item {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    
+    .static {
+      position: static;
+    }
+  </style>
+
+  <div class="item static">item</div>
+  <div class="item static">item</div>
+  <div class="item static">item</div> -->
+
+
+  <!-- <h1>position: relative</h1>
+  <p>
+    엘리먼트가 자신의 원래 위치를 기준으로 위치한다
+  </p>
+
+  <style>
+    .item {
+      background-color: #ddd;
+      display: inline-block;
+      padding: 0.5rem;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .top-2 {
+      /* top이 플러스인 경우 아래로 이동 */
+      top: 0.5rem;
+    }
+
+    .left-2 {
+      /* left가 플러스인 경우 오른쪽으로 이동 */
+      left: 0.5rem;
+    }
+  </style>
+
+  <div class="item">item</div>
+  <div class="item relative top-2 left-2">item</div>
+  <div class="item">item</div> -->
+
+
+  <!-- <h1>position: absolute</h1>
+  <p>
+    relative부모를 기준으로 위치한다
+  </p>
+  
+  <style>
+    .container {
+      border: 1px solid;
+      width: 200px;
+      height: 200px;
+    }
+    
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .bottom-0 {
+      bottom: 0;
+    }
+    
+    .right-0 {
+      right: 0;
+    }
+  </style>
+
+  <div class="container relative">
+    <div class="item absolute top-0 left-0">item 1</div>
+    <div class="item absolute top-0 right-0">item 2</div>
+    <div class="item absolute bottom-0 right-0">item 3</div>
+    <div class="item absolute bottom-0 left-0">item 4</div>
+  </div> -->
+
+
+  <!-- <h1>position: fixed</h1>
+  <p>
+    엘리먼트가 뷰포트를 기준으로 위치한다
+  </p>
+
+  <style>
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+    
+    .fixed {
+      position: fixed;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .bottom-0 {
+      bottom: 0;
+    }
+    
+    .right-0 {
+      right: 0;
+    }
+  </style>
+
+  <div class="item fixed top-0 left-0">item 1</div>
+  <div class="item fixed top-0 right-0">item 2</div>
+  <div class="item fixed bottom-0 right-0">item 3</div>
+  <div class="item fixed bottom-0 left-0">item 4</div> -->
+
+
+  <!-- <h1>Q. position</h1>
+
+  <style>
+    .container {
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+    }
+
+    .item {
+      width: 50px; 
+      height: 50px;
+      background-color: #000;
+    }
+    
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .bottom-0 {
+      bottom: 0;
+    }
+    
+    .right-0 {
+      right: 0;
+    }
+
+    .top-25px {
+      top: 25px;
+    }
+
+    .left-25px {
+      left: 25px;
+    }
+  </style>
+
+  <h3>check</h3>
+  <div class="container relative">
+    <div class="item absolute top-0 left-0"></div>
+    <div class="item absolute right-0 bottom-0"></div>
+  </div>
+
+  <h3>center</h3>
+  <div class="container">
+    <div class="item relative top-25px left-25px"></div>
+  </div> -->
+
+
+  <h1>transform</h1>
+  <p>엘리먼트의 변형</p>
+
+  <style>
+    .item {
+      background-color: #ddd;
+      width: 100px;
+      height: 100px;
+    }
+
+    .translate-4 {
+      /* 
+        엘리먼트를 자신의 원래 위치를 기준으로
+        이동시킨다
+        translate(left, top) 
+      */
+      transform: translate(10px, 10px);
+    }
+
+    .scale-110 {
+      /* 
+        엘리먼트의 크기 조절
+
+        scale(증가값)
+      */
+      transform: scale(1.1);
+    }
+
+    .rotate-12 {
+      /* 
+        엘리먼트를 회전시킨다
+
+        rotate(도)
+      */
+      transform: rotate(12deg);
+    }
+  </style>
+
+
+  <h3>transform: none</h3>
+  <div class="item"></div>
+
+  <h3>transform: translate</h3>
+  <div class="item translate-4"></div>
+
+  <h3>transform: scale</h3>
+  <div class="item scale-110"></div>
+
+  <h3>transform: rotate</h3>
+  <div class="item rotate-12"></div>
+
+
+
   
 </body>
 </html>

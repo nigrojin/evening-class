@@ -21,6 +21,12 @@ font-weight: 700
 2. 답: 16px
 3. 답: 200px
 
+1 / 16 화
+display, width, height 속성 활용 문제
+
+아일랜드 색상 이름: green, white, gold
+네덜란드 색상 이름: red, white, blue
+
 
 
 
