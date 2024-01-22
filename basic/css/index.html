@@ -2323,7 +2323,7 @@
   </div> -->
 
 
-  <h1>가상 엘리먼트</h1>
+  <!-- <h1>가상 엘리먼트</h1>
 
   <pre>
     1 개념
@@ -2350,7 +2350,199 @@
     <li>0</li>
     <li>50</li>
     <li>100</li>
+  </ul> -->
+
+  <!-- <h1>inherit, initial</h1>
+
+  <pre>
+    상속과 관련된 키워드
+    모든 CSS속성의 값이 될 수 있다
+
+    1 inherit
+    부모로부터 속성값을 상속받는다
+
+    2 initial
+    상속받은 값을 초기화한다
+  </pre>
+
+  <style>
+    ul {
+      color: #f00;
+    }
+
+    .inherit {
+      color: inherit;
+    }
+
+    .initial {
+      color: initial;
+    }
+  </style>
+
+  <ul>
+    <li>list item</li>
+    <li class="inherit">list item (inherit)</li>
+    <li class="initial">list item (initial)</li>
+  </ul> -->
+
+
+  <!-- <h1>CSS 변수</h1>
+
+  <style>
+    /* root element */
+    :root {
+      /* 변수 선언 */
+      --midnight: rgb(4, 15, 53);
+    }
+
+    ul {
+      /* var (variables, 변수) */
+      background-color: var(--midnight);
+      color: #fff;
+    }
+  </style>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul> -->
+
+
+  <!-- <h1>반응형 레이아웃</h1>
+  <p>
+    media 룰을 활용하여 레이아웃 기준점을 설정한다
+  </p>
+
+  <style>
+    .container {
+      border: 1px dashed;
+    }
+
+    .item {
+      background-color: #ddd;
+      padding: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    /* base */
+    .grid-cols-n {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width: 640px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 768px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <ul>
+    <li>S: 641px - 767px</li>
+    <li>M: 768px - 1023px</li>
+    <li>L: 1024px - 1279px</li>
+    <li>XL: 1280px - 1535px</li>
+    <li>XXL: 1536px - </li>
   </ul>
+
+  <div class="container grid gap-2 grid-cols-n">
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+    <div class="item">item</div>
+  </div> -->
+
+
+  <!-- <h1>Q. Breakpoints</h1>
+
+  <style>
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-n {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      .grid-cols-n {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <div class="grid grid-cols-n gap-4">
+    <div class="item">
+      <h3>section 1</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Velit incidunt, quisquam consequatur, obcaecati repudiandae 
+        consequuntur ipsam a in optio culpa placeat quae libero quaerat 
+        nihil soluta dolores natus nobis quasi.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>section 2</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Velit incidunt, quisquam consequatur, obcaecati repudiandae 
+        consequuntur ipsam a in optio culpa placeat quae libero quaerat 
+        nihil soluta dolores natus nobis quasi.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>section 3</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Velit incidunt, quisquam consequatur, obcaecati repudiandae 
+        consequuntur ipsam a in optio culpa placeat quae libero quaerat 
+        nihil soluta dolores natus nobis quasi.
+      </p>
+    </div>
+  </div> -->
 
 
 </body>
