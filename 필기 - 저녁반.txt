@@ -27,6 +27,17 @@ display, width, height 속성 활용 문제
 아일랜드 색상 이름: green, white, gold
 네덜란드 색상 이름: red, white, blue
 
+1/ 23 
+구글에 fontawesome 검색 > 메뉴에서 icons > 
+free and open source icons > 사용할 아이콘 검색
+
+^ caret
+또는 
+arrow-down
+
+bell 
+notification (알림)
+
 
 
 
