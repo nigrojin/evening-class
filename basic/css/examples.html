@@ -739,7 +739,7 @@
   </main> -->
 
 
-  <style>
+  <!-- <style>
     body {
       height: calc(100vh + 100px);
     }
@@ -853,7 +853,255 @@
   <main>
     <h1>Side Bar</h1>
     <p>..</p>
-  </main>
+  </main> -->
+
+  <!-- <style>
+    header {
+      /* fixed */
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* size */
+      width: 100%;
+      /* design */
+      padding-left: 1rem;
+      background-color: #333;
+      color: #fff;
+      /* 
+        z-index
+        포지션 경쟁이 발생했을 때 
+        값이 클수록 우선순위를 갖는다
+        기본값 0
+      */
+      z-index: 1;
+    }
+
+    .side-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* size */
+      width: 16rem;
+      height: 100%;
+      /* design */
+      background-color: #ddd;
+    }
+
+    ul {
+      margin-top: 6rem;
+    }
+
+    .link {
+      color: #000;
+    }
+
+    main {
+      margin-top: 6rem;
+      margin-left: 16rem;
+      padding: 0 1rem;
+    }
+
+  </style>
+
+  <header>
+    <h3 class="logo">LOGO</h3>
+  </header>
+
+  <nav class="side-bar">
+    <ul>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <main>
+    <h1>Dashboard</h1>
+    <p>..</p>
+  </main> -->
+
+
+  <!-- <h1>검색폼</h1>
+
+  <style>
+    .container {
+      /* border: 1px dashed; */
+      width: 24rem;
+      /* 
+        display: block에서
+        x축 margin을 auto로 할 경우
+        엘리먼트가 가운데에 위치한다
+      */
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: inherit;
+      /* design */
+      border: 1px solid #ddd;
+      padding: 0.5rem 2.5rem;
+      font-size: 1rem;
+      border-radius: 99px;
+      /* border 밖의 선 */
+      outline: none;
+    }
+
+    .icon {
+      width: 1rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      fill: #888;
+    }
+  </style>
+
+  <div class="container">
+    <input 
+      type="search" 
+      class="search-input"
+      placeholder="Search Google" 
+      name="q" 
+      autocomplete="off"
+    >
+    <svg 
+      class="icon"
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 512 512"
+    >
+      <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+    </svg>
+  </div> -->
+
+  <!-- <style>
+    .container {
+      /* border: 1px dashed; */
+      width: 300px;
+      /* top left/right bottom */
+      margin: 100px auto 0;
+    }
+
+    .form-group {
+      margin-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .username-input, .password-input {
+      /* size */
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      /* design */
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .btn {
+      /* size */
+      width: 100%;
+      padding: 0.5rem;
+      /* design */
+      background-color: #333;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      /* misc (miscellaneous, 잡다한 것) */
+      cursor: pointer;
+    }
+
+    .login-menu {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .link {
+      color: #000;
+    }
+  </style>
+
+  <div class="container">
+    <h2 class="title">Login</h2>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="username-input" id="username" value="testuser">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="password-input" id="password" value="shhhh">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn">Login</button>
+    </div>
+    <div class="login-menu">
+      <a href="#" class="link">Sign Up</a>
+      <a href="#" class="link">Forgot Password?</a>
+    </div>
+  </div> -->
+
+
+  <h1>개인정보 폼</h1>
+
+  <div class="container">
+    <div class="col-span-3">
+      <label for="fname">First name</label>
+      <input type="text" id="fname">
+    </div>
+
+    <div class="col-span-3">
+      <label for="lname">Last name</label>
+      <input type="text" id="lname">
+    </div>
+
+    <div class="col-span-4">
+      <label for="email">Email address</label>
+      <input type="text" id="email">
+    </div>
+
+    <div class="col-span-2">
+      <label for="country">Country</label>
+      <select name="country" id="country">
+        <option value="us">United States</option>
+        <option value="ca">Canada</option>
+        <option value="mx">Mexico</option>
+      </select>
+    </div>
+
+    <div class="col-span-6">
+      <label for="address">Street Address</label>
+      <input type="text" id="address">
+    </div>
+
+    <div class="col-span-2">
+      <label for="city">City</label>
+      <input type="text" id="city">
+    </div>
+
+    <div class="col-span-2">
+      <label for="state">State / Province</label>
+      <input type="text" id="state">
+    </div>
+    
+    <div class="col-span-2">
+      <label for="zip">ZIP / Postal code</label>
+      <input type="text" id="zip">
+    </div>
+  </div>
 
   
 </body>
