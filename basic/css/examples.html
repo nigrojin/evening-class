@@ -1055,7 +1055,44 @@
   </div> -->
 
 
-  <h1>개인정보 폼</h1>
+  <!-- <h1>개인정보 폼</h1>
+
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .col-span-2 {
+      grid-column-start: span 2;
+    }
+
+    .col-span-3 {
+      grid-column-start: span 3;
+    }
+
+    .col-span-4 {
+      grid-column-start: span 4;
+    }
+
+    .col-span-6 {
+      grid-column-start: span 6;
+    }
+
+    label {
+      display: block;
+    }
+
+    input, select {
+      /* input의 크기를 그리드 아이템에 맞춘다 */
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+  </style>
 
   <div class="container">
     <div class="col-span-3">
@@ -1101,7 +1138,190 @@
       <label for="zip">ZIP / Postal code</label>
       <input type="text" id="zip">
     </div>
+  </div> -->
+
+
+  <!-- <h1>램사이즈 선택</h1>
+
+  <style>
+    input {
+      display: none;
+    }
+
+    .container {
+      border: 1px dashed;
+      /* 컨텐츠에 필요한 만큼만 넓이를 갖는다. 나머지는 grid와 동일 */
+      display: inline-grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .btn {
+      /* size */
+      padding: 0.5rem 1rem;
+      /* design */
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* 선택된 옵션에 아웃라인 */
+    input:checked + .btn {
+      outline: 3px solid #333;
+    }
+  </style>
+
+  <div class="container">
+    <input type="radio" name="btn" id="4gb">
+    <label for="4gb" class="btn">4GB</label>
+    <input type="radio" name="btn" id="8gb" checked>
+    <label for="8gb" class="btn">8GB</label>
+    <input type="radio" name="btn" id="16gb">
+    <label for="16gb" class="btn">16GB</label>
+    <input type="radio" name="btn" id="32gb">
+    <label for="32gb" class="btn">32GB</label>
+    <input type="radio" name="btn" id="64gb">
+    <label for="64gb" class="btn">64GB</label>
+  </div> -->
+
+
+  <!-- <h1>어떤 스마트폰을 구매하시겠습니까?</h1>
+
+  <style>
+    .form-group {
+      margin-bottom: 0.5rem;
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    /* 옵션 */
+    .option {
+      display: block;
+      border: 2px solid #ddd;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    /* 선택된 옵션의 border 색 변경 */
+    .checkbox:checked + .option {
+      border: 2px solid #333;
+    }
+  </style>
+
+  <div class="form-group">
+    <input type="radio" name="phone" id="a" class="checkbox">
+    <label for="a" class="option">iPhone 15 Pro</label>
   </div>
+  <div class="form-group">
+    <input type="radio" name="phone" id="b" class="checkbox">
+    <label for="b" class="option">Galaxy S24</label>
+  </div>
+  <div class="form-group">
+    <input type="radio" name="phone" id="c" class="checkbox">
+    <label for="c" class="option">Pixel Pro 8</label>
+  </div>
+  <div class="form-group">
+    <input type="radio" name="phone" id="d" class="checkbox">
+    <label for="d" class="option">Others</label>
+  </div> -->
+
+
+
+  <!-- <h1>Color picker</h1>
+
+  <style>
+    input {
+      display: none;
+    }
+
+    /* 컬러칩 */
+    .color-chip {
+      /* layout */
+      display: inline-block;
+      margin-right: 0.25rem;
+      /* size */
+      width: 2rem;
+      height: 2rem;
+      /* design */
+      border: 1px solid #ddd;;
+      border-radius: 99px;
+    }
+
+    /* 선택된 컬러칩에 아웃라인 */
+    input:checked + .color-chip {
+      outline: 4px solid #ddd;
+    }
+
+    .white {
+      background-color: #fff;
+    }
+    
+    .gray {
+      background-color: #888;
+    }
+    
+    .black {
+      background-color: #000;
+    }
+  </style>
+
+  <div class="container">
+    <input type="radio" name="color" id="white" checked>
+    <label for="white" class="color-chip white"></label>
+    <input type="radio" name="color" id="gray">
+    <label for="gray" class="color-chip gray"></label>
+    <input type="radio" name="color" id="black">
+    <label for="black" class="color-chip black"></label>
+  </div> -->
+
+
+  <h1>여러개 옵션 선택하기</h1>
+
+  <style>
+    input {
+      display: none;
+    }
+
+    .option {
+      display: inline-block;
+      border: 1px solid #ddd;
+      padding: 0.5rem 0.75rem;
+      border-radius: 99px;
+    }
+
+    /* 선택된 옵션의 배경색 변경 */
+    input:checked + .option {
+      background-color: #cff;
+    }
+
+    /* 옵션 앞에 + 추가 */
+    .option::before {
+      content: "+ ";
+    }
+
+    /* 선택된 옵션의 + 제거 */
+    input:checked + .option::before {
+      /* 빈 문자열 */
+      content: ""
+    }
+  </style>
+
+  <p>가지고 있는 기술을 선택하세요</p>
+
+  <input type="checkbox" name="skills" id="html">
+  <label for="html" class="option">HTML</label>
+
+  <input type="checkbox" name="skills" id="css">
+  <label for="css" class="option">CSS</label>
+
+  <input type="checkbox" name="skills" id="js">
+  <label for="js" class="option">JavaScript</label>
+
+  <input type="checkbox" name="skills" id="react">
+  <label for="react" class="option">React</label>
 
   
 </body>
