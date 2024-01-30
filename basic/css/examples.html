@@ -1278,7 +1278,7 @@
   </div> -->
 
 
-  <h1>여러개 옵션 선택하기</h1>
+  <!-- <h1>여러개 옵션 선택하기</h1>
 
   <style>
     input {
@@ -1321,8 +1321,218 @@
   <label for="js" class="option">JavaScript</label>
 
   <input type="checkbox" name="skills" id="react">
-  <label for="react" class="option">React</label>
+  <label for="react" class="option">React</label> -->
 
+
+  <!-- <h1>아바타</h1>
+
+  <style>
+    .container {
+      /* border: 1px dashed; */
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 4rem;
+      height: 4rem;
+      object-fit: cover;
+      border-radius: 99px;
+    }
+
+    .username {
+      margin: 0;
+      margin-left: 0.5rem;
+    }
+  </style>
+
+  <div class="container">
+    <img class="avatar" src="https://i.ytimg.com/vi/xPjrkRgRTk4/maxresdefault.jpg" alt="">
+    <h3 class="username">이호창 본부장</h3>
+  </div> -->
+
+
+  <!-- <h1>카드</h1>
+
+  <style>
+    /* 
+      * box-shadow
+      그림자 효과
+      기본값: none (그림자 효과 없음)
+
+      - 사용 방법
+      box-shadow: offset-x offset-y blur spread color inset
+
+      1 offset-x (필수)
+      왼쪽(-) / 오른쪽(+)
+
+      2 offset-y (필수)
+      위(-) / 아래(+)
+
+      3 blur (흐림)
+      값이 높을수록 그림자가 더 흐려진다
+
+      4 spread (퍼짐)
+      그림자의 크기
+      증가(+) / 감소(-)
+      
+      5 color (색상)
+
+      6 inset
+      엘리먼트 안으로 그림자 효과를 적용한다
+    */
+    .card {
+      /* border: 1px dashed; */
+      box-shadow: 5px 5px 10px #ddd, -5px -5px 10px #ddd;
+      width: 16rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    img {
+      width: inherit;
+    }
+
+    .card-inner {
+      /* top left/right bottom */
+      padding: 0 1rem 1rem;
+    }
+
+    .content {
+      color: #888;
+    }
+  </style>
+
+  <div class="card">
+    <img src="https://i.ytimg.com/vi/xPjrkRgRTk4/maxresdefault.jpg" alt="">
+    <div class="card-inner">
+      <h3>이호창 본부장</h3>
+      <p class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Doloribus in corporis illo.
+      </p>
+    </div>
+  </div> -->
+
+
+  <!-- <h1>프로필</h1>
+
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background-color: #cef;
+    }
+
+    img {
+      width: 8rem;
+      height: 8rem;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      border-radius: 99px;
+    }
+
+    .info {
+      width: 16rem;
+      text-align: center;
+    }
+  </style>
+
+  <div class="container">
+    <img src="https://news.nateimg.co.kr/orgImg/tr/2023/06/21/81ff607a-3f93-4841-9b27-44e0e5cb4f10.jpg" alt="">
+    <div class="info">
+      <h3 class="username">Timon</h3>
+      <p>
+        Hello World!
+      </p>
+    </div>
+  </div> -->
+
+
+  <!-- <h1>이미지 확대효과</h1>
+
+  <style>
+    .container {
+      border: 1px solid #ddd;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      /* 애니메이션 */
+      transition: transform 0.2s;
+    }
+
+    /* 컨테이너에 호버했을 때 이미지의 크기를 증가시킨다 */
+    .container:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <div class="container">
+    <img src="https://img2.sbs.co.kr/img/seditor/VD/2022/05/11/0Df1652234259596-640-0.jpg" alt="">
+  </div> -->
+
+
+  <!-- <h1>오버레이가 있는 이미지</h1>
+
+  <style>
+    .container {
+      border: 1px solid #ddd;
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      /* 포지션 값을 모두 0으로 하는 경우 주어진 공간을 
+        모두 채운다 (cover)
+      */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* 텍스트를 가운데에 위치시킨다 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0 0 0 / 0.5);
+      color: #fff;
+      /* 
+        처음에 안보이는 상태 
+
+        opacity(불투명도)
+        0 (완전투명) - 1 (완전 불투명) 사이의 값을 갖는다
+      */
+      opacity: 0;
+      /* 애니메이션 효과 */
+      transition: opacity 0.2s;
+    }
+
+    /* 호버했을 때 오버레이를 나타나게 한다 */
+    .overlay:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <div class="container">
+    <img src="https://images.chosun.com/resizer/kUnX8CwWcbCW0fRzwC9mUfRFhUM=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/4ILI6TN5HJAHJJZAZZBAPZ64WU.jpg" alt="">
+    <div class="overlay">Caption</div>
+  </div> -->
   
 </body>
 </html>
