@@ -1533,6 +1533,235 @@
     <img src="https://images.chosun.com/resizer/kUnX8CwWcbCW0fRzwC9mUfRFhUM=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/4ILI6TN5HJAHJJZAZZBAPZ64WU.jpg" alt="">
     <div class="overlay">Caption</div>
   </div> -->
+
+
+  <!-- <h1>Figure</h1>
+
+  <style>
+    .container {
+      width: 400px;
+      height: 300px;
+      position: relative;
+    }
+
+    img {
+      /* size */
+      width: inherit;
+      height: inherit;
+      /* fit */
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0 0 0 / 0.5);
+      color: #fff;
+      width: inherit;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  </style>
+
+  <div class="container">
+    <img src="https://i.namu.wiki/i/oMGRC944XdCwbvvFTV_h2e_4Oco6fDSIFOtFXSjYgsEkziZULioJpuHJuAor6GNqvJo8dz9xVPqBuE2lklPLnw.webp" alt="">
+    <div class="overlay">
+      <h3>Pumbaa</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+  </div> -->
+
+
+  <!-- <h1>반응형 이미지 레이아웃</h1>
+
+  <style>
+    .container {
+      /* border: 1px dashed; */
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    img {
+      /* 이미지의 넓이를 그리드 아이템에 맞춘다 */
+      width: 100%;
+      /* 이미지의 비율에 맞게 높이가 정해진다 */
+      height: auto;
+    }
+
+    /* 스몰사이즈 이상 */
+    @media (min-width: 640px) {
+      .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <div class="container">
+    <img src="https://i.namu.wiki/i/ZnBMAAGJaiFKqDmASXCt-977Xuq6gLA-G8AsD4K1BKCVBEzrjISoW9QyfcSKPnacwuBpCGSSyBtCJv8E-UocNQ.webp" alt="">
+    <img src="https://cdn.entermedia.co.kr/news/photo/202208/29727_57556_157.jpg" alt="">
+  </div> -->
+
+
+
+  <!-- <h1>Article</h1>
+
+  <style>
+    .container {
+      /* border: 1px dashed; */
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* 스몰사이즈 이상 */
+    @media (min-width: 640px) {
+      .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <div class="container">
+    <img src="https://fimg5.pann.com/new/download.jsp?FileID=66903194" alt="">
+    <div class="content">
+      <h1>Title</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Doloribus labore distinctio facere earum alias omnis voluptatum itaque? 
+        Adipisci, soluta odio quia, accusantium deleniti incidunt quibusdam 
+        assumenda debitis molestias veritatis vero?
+      </p>
+    </div>
+  </div> -->
+
+
+  <!-- <h1>갤러리</h1>
+
+  <style>
+    .frame {
+      /* border: 1px dashed; */
+      width: 450px;
+      padding: 1rem 0;
+      overflow: auto;
+    }
+
+    .container {
+      display: flex;
+      width: 700px;
+      /* flex에서도 gap사용 가능 */
+      gap: 0.5rem;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* 스크롤바 사이즈 */
+    ::-webkit-scrollbar {
+      /* x축일때 - height, y축 일때 - width */
+      height: 5px;
+    }
+
+    /* 트랙 */
+    ::-webkit-scrollbar-track {
+      background: #eee;
+    }
+
+    /* 손잡이 */
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+    }
+  </style>
+
+  <div class="frame">
+    <div class="container">
+      <img src="https://i.namu.wiki/i/ZnBMAAGJaiFKqDmASXCt-977Xuq6gLA-G8AsD4K1BKCVBEzrjISoW9QyfcSKPnacwuBpCGSSyBtCJv8E-UocNQ.webp" alt="">
+      <img src="https://cdn.entermedia.co.kr/news/photo/202208/29727_57556_157.jpg" alt="">
+      <img src="https://i.namu.wiki/i/oMGRC944XdCwbvvFTV_h2e_4Oco6fDSIFOtFXSjYgsEkziZULioJpuHJuAor6GNqvJo8dz9xVPqBuE2lklPLnw.webp" alt="">
+    </div>
+  </div> -->
+
+
+  <!-- <h1>Hero 이미지</h1>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .background {
+      height: 400px;
+      /* 
+        linear-gradient 
+        선형 그라디언트 효과
+
+        linear-gradient(방향, 색1, 색2, ...)
+      */
+      background-image: linear-gradient(to right, #333, #000);
+    }
+
+    .container {
+      /* border: 1px dashed; */
+
+      /* size */
+      max-width: 640px;
+      height: inherit;
+      /* layout */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 0 1rem;
+      /* design */
+      color: #fff;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      /* 약간 투명한 상태 */
+      opacity: 0.8;
+    }
+
+    /* 버튼에 호버했을 때 선명한 상태로 바꾼다 */
+    .btn:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <div class="background">
+    <div class="container">
+      <h1 class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      </h1>
+      <div class="btn-group">
+        <button class="btn">Sign Up</button>
+        <button class="btn">Learn More</button>
+      </div>
+    </div>
+  </div> -->
+
+
   
 </body>
 </html>
