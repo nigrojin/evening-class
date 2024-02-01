@@ -1762,6 +1762,233 @@
   </div> -->
 
 
+
+  <!-- <h1>모달 (Modal)</h1>
+
+  <style>
+    /* 뷰포트를 커버한다 */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0 0 0 / 0.2);
+    }
+
+    .modal {
+      /* size */
+      width: 20rem;
+      /* layout */
+      margin: 100px auto 0;
+      /* design */
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+  </style>
+
+  <div class="overlay">
+    <div class="modal">
+      <h1>Content</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, asperiores quam? Porro, sit cum maiores odio
+        reprehenderit ea, molestiae quibusdam iusto eos, id molestias quas ipsam temporibus quo quam distinctio!</p>
+    </div>
+  </div> -->
+
+  <!-- <style>
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0 0 0 / 0.5);
+    }
+
+    .modal {
+      width: 24rem;
+      margin: 100px auto 0;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 1rem;
+    }
+
+    .caption {
+      text-align: center;
+      color: #ddd;
+    }
+  </style>
+
+  <div class="overlay">
+    <div class="modal">
+      <img src="https://talkimg.imbc.com/TVianUpload/TVian/TViews/image/2020/04/14/pmkfmra62mlg637224782386600614.jpg" alt="">
+      <h3 class="caption">Timon & Pumbaa</h3>
+    </div>
+  </div> -->
+
+
+
+  <!-- <h1>테이블</h1>
+
+  <style>
+    table {
+      /* 
+        border-collapse
+        td사이의 공간을 처리한다
+
+        1 seperate (기본값)
+        td사이에 공간을 준다
+
+        2 collapse
+        td사이에 공간을 주지 않는다
+      */
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      /* border-collapse가 collapse일 때 적용가능 */
+      border-bottom: 1px solid;
+    }
+
+    /* 행 제목 (row heading) */
+    .rh {
+      font-weight: bold;
+    }
+
+    th, td {
+      padding: 0.5rem;
+    }
+
+    /* 홀수행에 배경색 적용 */
+    tbody tr:nth-child(odd) {
+      background-color: #eee;
+    }
+
+    /* 
+      가상클래스 nth-child(인자)
+      특정 순서의 자식을 선택할 수 있다
+
+      - 인자가 될 수 있는 값
+      1 숫자
+      2 even(짝수), odd(홀수)
+      3 간단한 연산
+      예) 2n+1 
+    */
+  </style>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>이름</th>
+        <th>원산지</th>
+        <th>판매중</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rh">1</td>
+        <td>Guinness</td>
+        <td>Ireland</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td class="rh">2</td>
+        <td>Heineken</td>
+        <td>Netherlands</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td class="rh">3</td>
+        <td>Budwiser</td>
+        <td>USA</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+
+
+  <!-- <h1>스피너</h1>
+
+  <style>
+    #spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #333;
+      border-top: 5px solid transparent;
+      border-radius: 99px;
+      margin: 50px auto;
+
+      /* 애니메이션 적용 */
+      animation-name: spin;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      /* 
+        CSS 애니메이션 속성
+
+        1 animation-name (필수)
+        적용할 애니메이션의 이름
+
+        2 animation-duration (필수)
+        애니메이션이 한번 진행되는데 걸리는 시간
+
+        3 animation-iteration-count
+        애니메이션의 반복 횟수. 기본값은 1
+        1) 숫자
+        2) infinite (무한)
+
+        4 animation-timing-function
+        애니메이션의 속도 조절
+
+        1) ease (기본값)
+        2) ease-in
+        3) ease-out
+        4) linear
+      */
+    }
+
+    /* 애니메이션 선언 */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      } to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <div id="spinner"></div> -->
+
+
+  <style>
+    #heart {
+      margin: 2rem;
+      /* size */
+      width: 40px;
+      height: 40px;
+      /* design */
+      background-color: #f00;
+      border-radius: 99px;
+      /* 
+        animation: name duration iteration-count timing-function
+      */
+      animation: pulse 0.8s infinite ease;
+    }
+    
+    @keyframes pulse {
+      from {
+        outline: 0px solid rgba(255 0 0 / 0.8);
+      } to {
+        outline: 20px solid rgba(255 0 0 / 0);
+      }
+    }
+  </style>
+
+  <div id="heart"></div>
+
   
 </body>
 </html>
