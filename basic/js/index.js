@@ -594,3 +594,524 @@
 // console.log(2023 === "2023"); 
 // // false
 
+
+/*
+  3 비동등 연산자
+
+  표현식1 != 표현식2
+
+  표현식이 동등하지 않으면 참
+  표현식이 동등하면 거짓을 리턴한다
+*/
+
+
+// console.log(1 != 2) 
+// // true
+// console.log("foo" != "bar");
+// // true
+// console.log(0 != false);
+// // false
+// console.log(2023 != "2023");
+// // false
+
+
+/*
+  4 엄격 비동등 연산자
+
+  표현식1 !== 표현식2
+
+  표현식이 엄격하게 비동등하면 참
+  표현식이 엄격하게 동등하면 거짓을 리턴한다
+*/
+
+
+// console.log(1 !== 2) 
+// // true
+// console.log("foo" !== "bar");
+// // true
+// console.log(0 !== false); 
+// // true
+// console.log(2023 !== "2023") 
+// // true
+
+
+/*
+  5 gt (greater than) 연산자
+  >
+  6 gte (greater than or equal to) 연산자
+  >=
+  7 lt (less than) 연산자
+  <
+  8 lte (less than or equal to) 연산자
+  <=
+*/
+
+// console.log(1 > 0);
+// console.log(1 >= 0);
+// console.log(1 < 0);
+// console.log(1 <= 0);
+
+
+/*
+  논리 연산자
+
+  1 그리고
+  2 또는
+  3 부정
+*/
+
+
+/*
+  1 그리고 (&&)
+  표현식 1 && 표현식 2
+
+  표현식이 모두 참으로 간주되는 경우 참을 리턴한다
+*/
+
+
+// console.log(1 > 0 && 1 < 2);
+// console.log(1 > 0 && -1 > 0)
+// false
+
+
+/*
+  2 또는 (||) 
+  표현식1 || 표현식2
+
+  둘 중에 하나가 참이거나 둘다 참이면 참을 리턴한다
+*/
+
+
+// console.log(1 > 0 || 1 > 2);
+// true
+
+
+/*
+  3 부정 (!)
+  !표현식
+
+  표현식을 부정한다
+*/
+
+
+// console.log(!true);
+// // false
+// console.log(!false);
+// // true
+
+
+// Boolean 타입이 아닌 값을 부정하는 경우
+
+// console.log(!2023);
+// // false - 0이 아닌 숫자를 부정하는 경우
+// console.log(!0);
+// // true
+// console.log(!"foo");
+// // false
+// console.log(!"");
+// // true 
+// console.log(!null);
+// // true
+
+
+
+/*
+  타입 연산자
+
+  변수의 타입을 리턴한다
+*/
+
+
+// var foo = "bar";
+
+// console.log(typeof foo);
+// // string
+
+
+
+/*
+  Q. 연산자
+
+  다음의 문장을 코드로 작성하고
+  결과를 출력해보세요
+
+  1. 빈문자열과 false는 동등하다
+  2. null과 false는 동등하지 않다
+  3. 1은 true와 같고, 0은 false와 같다
+*/
+
+
+// console.log("" == false);
+// console.log(null != false);
+// console.log(1 == true && 0 == false)
+
+
+
+/*
+  조건문
+
+  1 if문
+  2 switch 문
+  3 삼항연산자 문
+*/
+
+
+/*
+  if 문
+
+  1 if 
+  2 if / else
+  3 if / else if
+*/
+
+
+/*
+  1 if 
+
+  if (조건) {
+    조건이 참인 경우 실행되는 코드
+  }
+*/
+
+
+// var year = 2024;
+
+// if (year === 2024) {
+//   console.log("올 해");
+// }
+
+
+// 조건 부분이 Boolean 타입이 아닌 경우
+
+// 빈문자열, null, 0 등은 false로 간주된다
+// if ("") {
+//   console.log("실행 안될거임");
+// }
+
+
+/*
+  2 if / else 
+
+  if (조건) {
+    조건이 참인 경우 실행되는 코드
+  } else {
+    조건이 거짓이 경우 실행되는 코드
+  }
+*/
+
+
+// var year = 2024;
+
+// if (year == 2024) {
+//   console.log("올해")
+// } else {
+//   console.log("올해가 아닙니다")
+// }
+
+
+/*
+  3 if / else if
+
+  if (조건1) {
+    조건1이 참인 경우 실행되는 코드
+  } else if (조건2) {
+    조건2가 참인 경우 실행되는 코드 
+  } else {
+    모든 조건이 거짓인 경우 실행되는 코드
+  }
+*/
+
+
+// var year = 2024;
+
+// if (year == 2023) {
+//   console.log("작년")
+// } else if (year == 2024) {
+//   console.log("올해")
+// } else if (year == 2025) {
+//   console.log("내년")
+// } else { // 옵션
+//   console.log("가까운 년도가 아닙니다")
+// }
+
+
+/*
+  switch 문
+  인자와 케이스 사이에서
+  엄격 동등연산을 수행한다
+
+  1 기본 사용방법
+  2 default 
+*/
+
+// 1 기본 사용 방법
+ 
+// var year = 2024;
+
+// switch (year) {
+//   case 2023:
+//     console.log("작년");
+//     break;
+
+//   case 2024:
+//     console.log("올해");
+//     break;
+
+//   case 2025:
+//     console.log("내년");
+//     break;
+// }
+
+// 올해
+
+
+// default
+// 모든 케이스가 거짓인 경우 default 코드가 실행된다
+
+// var year = 2030;
+
+// switch (year) {
+//   case 2023:
+//     console.log("작년");
+//     break;
+
+//   case 2024:
+//     console.log("올해");
+//     break;
+
+//   case 2025:
+//     console.log("내년");
+//     break;
+
+//   default:
+//     console.log("가까운 년도가 아닙니다")
+// }
+
+
+/*
+  삼항연산자 (?) 문
+
+  조건 ? 값1 : 값2
+
+  조건이 참인 경우 값1
+  조건이 거짓인 경우 값2를 리턴한다
+*/
+
+
+// var year = 2024;
+
+// var r = year === 2024 ? "올해" : "올해가 아닙니다"
+
+// console.log(r);
+// // 올해
+
+
+
+/*
+  Q1. 나이 변수에 따라서 사람이 성인인지 아닌지를
+  출력하는 조건문을 만들어 보세요
+
+  1 if / else 문
+  2 삼항연산자 문
+*/
+
+
+// 1 if / else
+
+// var age = 20;
+
+// if (age >= 18) {
+//   console.log("성인입니다")
+// } else {
+//   console.log("성인이 아닙니다")
+// }
+
+
+// // 삼항연산자
+
+// var age = 20;
+
+// var r = age >= 18 ? "성인입니다" : "성인이 아닙니다"
+
+// console.log(r)
+
+
+
+/*
+  Q2. 차의 이름을 입력하면 가격을 알려주는
+  switch 문을 만들어보세요
+  (판매중인 차가 아니라면 적절한 메시지를 출력하세요)
+
+  <하이브리드/전기차 리스트>
+
+  1 아반떼 하이브리드
+  2500
+  2 XM3 하이브리드
+  3000
+  3 코나
+  4500
+  4 아이오닉6
+  5000
+*/
+
+
+// var car = "XM3 Hybrid";
+
+// switch (car) {
+//   case "Avante Hybrid":
+//     console.log(2500);
+//     break;
+
+//   case "XM3 Hybrid":
+//     console.log(3000);
+//     break;
+
+//   case "KONA":
+//     console.log(4500);
+//     break;
+
+//   case "IONIQ 6":
+//     console.log(5000);
+//     break;
+
+//   default:
+//     console.log("판매중인 차가 아닙니다");
+// }
+
+
+
+/*
+  반복문
+  블록의 코드를 여러번 실행한다
+
+  1 for 문
+  2 while 문
+*/
+
+
+/*
+  for 문
+
+  1 기본 사용법
+  2 실제 사용사례
+  3 break
+  4 continue
+*/
+
+
+/*
+  1 기본 사용법
+
+  for (표현식1; 표현식2; 표현식3) {
+    반복할 코드
+  }
+
+  표현식1 - 반복 변수의 초기값 설정
+  표현식2 - 반복 조건
+  표현식3 - 변수 업데이트 연산
+*/
+
+
+// for (var n = 1; n <= 10; n++) { // 블록 (block)
+//   // 블록안에서 반복 변수에 접근 가능
+//   console.log(n + "번 실행되었습니다")
+// }
+
+
+
+// 2 사용 사례
+// 1부터 10까지의 합을 구하시오
+
+// var sum = 0;
+
+// for (var n = 1; n <= 10; n++) {
+//   // 누적
+//   sum += n; // sum = sum + n
+// }
+
+// console.log(sum);
+// // 55
+
+
+/*
+  break
+
+  특정 조건을 만족하는 경우 반복문을 빠져나온다
+*/
+
+
+// for (var n = 1; n <= 10; n++) {
+//   if (n == 5) {
+//     break;
+//   }
+
+//   console.log(n);
+// }
+
+
+// 4 continue
+// 특정 조건을 만족할 때 현재 블록을 스킵한다
+
+// for (var n = 1; n <= 10; n++) {
+//   if (n == 5) {
+//     continue;
+//   }
+
+//   console.log(n);
+// }
+
+
+/*
+  while 반복문
+
+  while (반복 조건) {
+    반복할 코드
+  }
+*/
+
+
+// 변수의 초기값 설정
+// var n = 1;
+
+// while (n <= 10) {
+//   console.log(n + "번 실행되었습니다");
+
+//   // 변수 업데이트 연산
+//   n++;
+// }
+
+
+// var n = 1;
+
+// while (n <= 10) {
+//   n++;
+
+//   console.log(n + "번 실행되었습니다")
+// }
+
+
+// while 문에서도 break, continue 사용 가능
+
+
+// var n = 1;
+
+// while (true) {
+//   if (n == 5) {
+//     break;
+//   }
+
+//   console.log(n);
+
+//   n++;
+// }
+
+
+// Q. while 문으로 1부터 10까지의 합을 구하는 코드를
+// 작성해보세요
+
+
+
+
+
+
+
