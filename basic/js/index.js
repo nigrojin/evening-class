@@ -1110,8 +1110,288 @@
 // 작성해보세요
 
 
+// var n = 1;
+// var sum = 0;
+
+// while (n <= 10) {
+//   sum += n;
+
+//   n++;
+// }
+
+// console.log(sum);
+
+
+// Q2. 1부터 10까지의 숫자중 짝수만 출력하는 코드를
+// 작성해보세요 (for 문)
+
+
+// for (var n = 1; n <= 10; n++) {
+//   if (n % 2 == 0) { // 짝수
+//     console.log(n);
+//   }
+// }
+
+// for (var n = 1; n <= 10; n++) {
+//   if (n % 2 == 1) { // 홀수
+//     continue;
+//   }
+
+//   console.log(n);
+// }
+
+// for (var n = 2; n <= 10; n += 2) {
+//   console.log(n);
+// }
 
 
 
+/*
+  변수 (Variable)
+  값을 저장하는 컨테이너
 
+  1 기본 사용법
+  2 전역변수와 지역변수
+*/
+
+
+// 1 기본 사용법
+
+// 변수 초기화 (선언 및 값 할당)
+// var foo = "bar";
+
+// console.log(foo);
+
+
+// // 선언
+// var foo;
+
+// // 나중에 정의
+// foo = "bar";
+
+// console.log(foo);
+// // bar
+
+
+// 정의
+// var foo = "bar";
+
+// // 재정의
+// foo = "baz";
+
+// console.log(foo);
+// // baz
+
+
+
+/*
+  전역변수와 지역변수
+
+  1 전역 변수 (global variable)
+  2 지역 변수 (local variable)
+*/
+
+
+/*
+  1 전역 변수
+  소스코드 어디에서든지 접근가능한 변수
+*/
+
+
+// var varInGlobal = true;
+
+// console.log(varInGlobal);
+// // true
+
+
+/*
+  2 지역 변수
+  함수 안에서 선언된 변수.
+  선언된 함수 내에서만 접근 가능하다
+*/
+
+
+// function f() {
+//   // 지역 변수
+//   var varInFunction = true;
+// }
+
+// // 함수 밖에서 변수에 접근 시도
+// console.log(varInFunction);
+
+// // 함수 호출
+// f();
+
+// // ReferenceError: varInFunction is not defined
+// // varInFunction이 정의되지 않았다
+
+
+
+/*
+  함수 (function)
+  호출할때에만 실행되는 코드.
+  기능의 단위로 사용된다
+
+  1 함수 선언과 호출
+  2 Hoisting
+  3 매개변수와 인자
+  4 return
+  5 콜백
+*/
+
+
+// 1 함수 선언과 호출
+
+// 함수 선언 및 정의
+// function f() { // 정의
+//   console.log("foo");
+// }
+
+// // 호출
+// f();
+// f();
+
+
+// 함수 선언
+
+// 변수에 익명함수를 할당한다 - 함수표현식
+// var f = function () {
+//   console.log("foo");
+// }
+
+// // 호출
+// f();
+
+
+/*
+  Hoisting (게양)
+
+  함수의 정의를 호출시점보다 아래에 작성할 수 있다
+  일종의 가독성 옵션
+
+  * 함수표현식에는 적용되지 않는다
+*/
+
+
+// f();
+
+// function f() {
+//   console.log("foo");
+// }
+
+
+
+/*
+  매개변수와 인자
+
+  1 매개변수 (Parameter)
+  인자를 치환한 변수
+
+  2 인자 (arguments)
+  함수에 실제로 입력되는 값
+*/
+
+// 두개의 인자를 더해서 결과를 출력하는 함수
+
+// function add(x, y) { // x, y - 매개변수
+//   console.log("결과:", x + y);
+// }
+
+// add(1, 2); // 1, 2 - 인자
+// // 결과: 3
+
+
+
+/*
+  return
+
+  함수는 연산의 결과를 반환(return)할 수 있다
+*/
+
+
+// function add(x, y) {
+//   return x + y;
+// }
+
+// // add함수가 반환한 값을 변수 r에 저장한다
+// var r = add(1, 2);
+
+// console.log("결과:", r);
+// // 결과: 3
+
+
+// 작업을 중단시킬때 return을 사용할 수 있다
+
+// function isNegative(n) {
+//   if (n < 0) {
+//     console.log("음수입니다");
+//     return;
+//   }
+
+//   // return 아래 코드는 실행되지 않는다
+//   console.log("음수가 아닙니다");
+// }
+
+// isNegative(-1);
+// // 음수입니다
+
+
+/*
+  콜백 (Callback)
+  함수인자
+
+  1 기본사용법
+  2 실제 활용 예시
+*/
+
+
+// 1 기본 사용법
+
+// function f(callback) {
+//   var foo = "bar";
+
+//   // f함수 안에서 콜백 호출
+//   callback(foo);
+// }
+
+// function cb(data) { // 콜백
+//   console.log(data);
+// } 
+
+// f(cb);
+
+
+// 2 실제 활용 예시
+
+// function getTime() {
+//   // 현재시간
+//   var time = new Date().toLocaleTimeString();
+  
+//   console.log(time);
+// }
+
+// // setInterval(콜백, ms) - ms마다 콜백을 실행한다
+// // 1000ms = 1s
+// setInterval(getTime, 1000);
+
+
+
+// Q1. 나이를 입력하면 사람이 성인인지 아닌지를 출력하는 함수를 만들어보세요
+
+
+// function isAdult(age) {
+//   if (age >= 18) {
+//     console.log("성인입니다")
+//   } else {
+//     console.log("성인이 아닙니다")
+//   }
+// }
+
+// isAdult(20);
+// // 성인입니다
+
+
+// Q2. 인자(자연수)를 전달하면 1부터 인자까지의 합을 구해서
+// 반환하는 함수를 만들어보세요
+// 예) 10을 전달하면 1부터 10까지의 합을 구한다
 
