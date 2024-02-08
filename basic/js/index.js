@@ -1395,3 +1395,339 @@
 // 반환하는 함수를 만들어보세요
 // 예) 10을 전달하면 1부터 10까지의 합을 구한다
 
+
+
+// function f(m) {
+//   var sum = 0;
+
+//   for (var n = 1; n <= m; n++) {
+//     sum += n;  
+//   }
+
+//   return sum;
+// }
+
+// var r = f(10);
+
+// console.log(r);
+
+
+
+/*
+  배열 (Array)
+  한개 이상의 값을 가지는 데이터 타입
+
+  1 구조
+  2 기본 사용법
+  3 배열 메서드
+  4 배열 순회
+*/
+
+
+// 1 구조
+
+// 각 값 - 아이템
+// var arr = [10, 20, 30];
+
+// console.log(arr);
+
+
+/*
+  기본 사용법
+
+  1 아이템에 접근하기
+  2 아이템 바꾸기
+  3 아이템의 갯수 구하기
+*/
+
+
+// 1 아이템에 접근하기
+
+// var arr = [10, 20, 30];
+
+// // 인덱스로 접근
+// console.log(arr[0]); // 10
+// console.log(arr[1]); // 20
+// console.log(arr[2]); // 30
+
+
+// 2 아이템 바꾸기
+
+// var arr = [10, 20, 30];
+
+// // 새 값 대입
+// arr[2] = 99;
+
+// console.log(arr)
+// // 10, 20, 99
+
+
+// 3 아이템 갯수 구하기
+
+// var arr = [10, 20, 30];
+
+// console.log(arr.length);
+// 3
+
+
+/*
+  Q. 기본 사용법 문제
+
+  1 탑5 자동차 제조사 리스트(문자열 배열)을 만들어보세요
+  - 볼보, BMW, 현대, 토요타, 포드
+
+  2. 최근 토요타가 연비조작사건으로 나락으로 가게 생겼습니다
+  토요타를 기아로 바꾸어보세요
+*/
+
+
+// var top5brands = ["볼보", "BMW", "현대", "토요타", "포드"];
+
+// // 도요타를 기아로 바꾸기
+// top5brands[3] = "기아"
+
+// console.log(top5brands)
+
+
+/*
+  배열 메서드
+  배열에 특정한 작업을 수행한다
+
+  1 push
+  2 pop
+  3 concat
+  4 splice
+  5 sort
+*/
+
+
+/*
+  1 push(새아이템1, 새아이템2, ...)
+
+  배열의 마지막에 새 아이템(들)을 추가한다
+*/
+
+
+// var arr = [10, 20];
+
+// arr.push(30);
+
+// console.log(arr);
+// // 10, 20, 30
+
+
+/*
+  2 pop()
+
+  배열의 마지막 아이템을 제거한다
+*/
+
+
+// var arr = [10, 20, 30];
+
+// arr.pop();
+
+// console.log(arr);
+// // 10, 20
+
+
+/*
+  3 concat(배열1, 배열2, ..)
+
+  새로운 배열들을 기존의 배열 뒤에 연결(concatenation)한다
+  연결된 배열을 리턴한다
+*/
+
+
+var arr1 = [10, 20];
+var arr2 = [30, 40];
+
+var r = arr1.concat(arr2); 
+
+// console.log(r);
+// 10, 20, 30, 40
+
+
+/*
+  4 splice
+  원하는 위치에 아이템을 추가하거나 삭제할 수 있다
+
+  - 사용방법
+  splice(시작인덱스, 삭제갯수, 새아이템1, 새아이템2, ..)
+  시작인덱스는 필수
+*/
+
+// 1
+// var arr = [10, 20, 30, 40];
+
+// // 인덱스2에 해당하는 아이템부터 그 뒤의 모든 아이템 삭제
+// arr.splice(2);
+
+// console.log(arr);
+// // 10, 20
+
+
+// 2
+// var arr = [10, 20, 30, 40];
+
+// // 인덱스2의 아이템부터 뒤로 1개의 아이템을 삭제한다
+// arr.splice(2, 1);
+
+// console.log(arr);
+// 10, 20, 40
+
+
+// 3
+// var arr = [10, 20, 30, 40];
+
+// // 인덱스2의 아이템부터 뒤로 1개의 아이템을 삭제하고
+// // 그 자리에 99를 추가한다
+// arr.splice(2, 1, 99);
+
+// console.log(arr);
+// // 10, 20, 99, 40
+
+
+/*
+  5 sort
+  아이템을 정렬한다
+  숫자 배열인 경우 오름차순
+  문자열 배열의 경우 알파벳순
+*/
+
+
+// var arr = [10, 30, 20];
+
+// arr.sort();
+
+// console.log(arr);
+// // 10, 20, 30
+
+
+/*
+  Q1. 배열메서드
+
+  자동차 리스트의 마지막에 새 자동차를 추가해보세요
+*/
+
+// var cars = ["스타리아", "아반떼", "아이오닉6"];
+// var newCar = "캐스퍼";
+
+// cars.push(newCar);
+
+// console.log(cars);
+
+
+/*
+  Q2. 배열 메서드
+
+  아시아 자동차 리스트(배열)을 만들어보세요
+*/
+
+
+// var koreanCars = ["현대", "기아"];
+// var japaneseCars = ["렉서스", "닛싼", "토요타"];
+
+// var asianCars = koreanCars.concat(japaneseCars);
+
+// console.log(asianCars);
+
+
+
+/*
+  배열 순회 (loop)
+  배열에 특정한 작업을 수행한다
+
+  1 배열의 각아이템 업데이트하기
+  2 배열 필터링하기
+*/
+
+
+// 1 배열의 각 아이템 업데이트
+// 각 아이템에 10을 곱해야 하는 경우
+
+// var arr = [10, 20, 30];
+
+// // 변수 i를 인덱스로 활용한다
+// for (var i = 0; i < arr.length; i++) {
+//   console.log(arr[i] * 10);
+// }
+
+
+// 2 배열 필터링
+// 성인만 출력해야 하는 경우
+
+// var ages = [12, 19, 23, 30];
+
+// for (var i = 0; i < ages.length; i++) {
+//   if (ages[i] >= 18) {
+//     console.log(ages[i]);
+//   }
+// }
+
+
+/*
+  Q1. 배열 순회
+  각 브랜드의 이름을 대문자로 출력해보세요
+
+  결과:
+  APPLE
+  SAMSUNG
+  HUAWEI
+*/
+
+// var brands = ["apple", "samsung", "huawei"];
+
+// for (var i=0; i < brands.length; i++) {
+//   console.log(brands[i].toUpperCase());
+// }
+
+
+
+/*
+  Q2. 배열 순회
+
+  b로 시작하는 아이템을 출력해보세요
+
+  결과:
+  bar
+  baz
+*/
+
+// var arr = ["foo", "bar", "baz"];
+
+// for (var i = 0; i < arr.length; i++) {
+//   if (arr[i][0] == "b") {
+//     console.log(arr[i]);
+//   }
+// }
+
+
+// var cars = ["그랜저", "소나타", "캐스퍼"];
+
+// var r = cars.join("와 ");
+
+// console.log(r);
+// console.log(typeof r);
+// // 그랜저, 소나타, 캐스퍼
+
+
+// var cars = ["레이", "카니발", "K6"];
+
+// var r = cars.includes("싼타페"); // 포함여부
+
+// console.log(r);
+// // false
+
+
+var cars = ["레이", "카니발", "K6"];
+
+var r = cars.indexOf("카니발");
+
+console.log(r);
+// 1
+
+
+
+
+
