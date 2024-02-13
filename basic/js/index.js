@@ -1720,14 +1720,327 @@ var r = arr1.concat(arr2);
 // // false
 
 
-var cars = ["레이", "카니발", "K6"];
+// var cars = ["레이", "카니발", "K6"];
 
-var r = cars.indexOf("카니발");
+// var r = cars.indexOf("카니발");
 
-console.log(r);
+// console.log(r);
 // 1
 
 
+/*
+  객체 (Object)
+  데이터와 함수의 집합
+  데이터를 다루기 위한 기본 단위로 활용된다
+
+  1 구조
+  2 기본 사용방법
+*/
 
 
+/*
+  구조
 
+  1 속성 (property)
+  객체가 가진 데이터
+  key와 value로 구성된다
+
+  2 메서드 (methods)
+  속성 중에서 값(value)이 함수인 것을 특별히 메서드라고 부른다
+*/
+
+
+// var cat = {
+//   // key: value
+//   name: "치즈",
+//   home: null,
+//   sound: function () { // 메서드
+//     return "야옹";
+//   }
+// }
+
+
+// console.log(cat);
+
+
+/*
+  Q. 객체의 구조
+
+  "korea"라는 이름의 객체를 선언해보세요
+
+  - 속성
+  1 수도 (Capital city)
+  값: 서울
+  타입: 문자열
+
+  2 인구 (Population)
+  값: 5000
+  타입: Number
+
+  3 언어 (Language)
+  값: 한국어
+  타입: 문자열
+
+  4 G7 여부
+  값: 아니오
+  타입: Boolean
+
+  - 메서드
+  1 K-POP 재생기능
+  케이팝 음악을 재생한다
+*/
+
+
+// var korea = {
+//   capitalCity: "서울",
+//   population: 5000,
+//   language: "한국어",
+//   isG7: false,
+//   kpop: function() {
+//     return "내가 만든 쿠키~"
+//   }
+// }
+
+
+// console.log(korea);
+
+
+/*
+  기본 사용법
+
+  1 속성에 접근하기
+  2 속성 추가 / 수정
+  3 속성 삭제
+*/
+
+
+// 1 속성에 접근
+// var cat = {
+//   name: "치즈",
+//   home: null,
+//   sound: function () {
+//     return "야옹";
+//   }
+// }
+
+
+// // name
+// console.log(cat.name); // 치즈
+// console.log(cat["name"]); // 치즈
+// // home
+// console.log(cat.home); // null
+// // 없는 속성에 접근 시도
+// console.log(cat.color); // undefined
+// // 메서드 호출
+// console.log(cat.sound()); // 야옹
+
+
+// 2 속성 추가 / 수정
+
+// var cat = {
+//   name: "치즈",
+//   home: null
+// };
+
+// // 속성 추가
+// cat.age = 2;
+
+// // 메서드 추가 (함수표현식)
+// cat.sound = function () {
+//   return "야옹";
+// }
+
+// console.log(cat);
+
+// // 속성 수정
+// cat.home = "삼산동"; // 입양됨
+
+// console.log(cat)
+
+
+// 4 속성 삭제
+
+// var cat = {
+//   name: "치즈",
+//   home: null
+// }
+
+// delete cat.home; // 개냥정보 침해
+
+// console.log(cat);
+
+
+/*
+  Q1. 기본 사용법
+
+  판매중인 맥주의 이름만 출력해보세요
+  (available - true)
+
+  결과:
+  Heineken
+  Budwiser
+  Kirin
+*/
+
+
+// var beers = [
+//   { name: "Guinness", origin: "Ireland", available: false },
+//   { name: "Heineken", origin: "Netherlands", available: true },
+//   { name: "Budwiser", origin: "USA", available: true },
+//   { name: "Kirin", origin: "Japan", available: true },
+// ]
+
+
+// for (var i = 0; i < beers.length; i++) {
+//   if (beers[i].available == true) {
+//     console.log(beers[i].name);
+//   }
+// }
+
+
+/*
+  Q2. 기본 사용법
+
+  아일랜드 맥주가 재입고 되었습니다
+  객체에 반영해보세요
+*/
+
+
+// var irishBeer = {
+//   name: "기네스",
+//   origin: "아일랜드",
+//   available: false // 판매중(available)
+// };
+
+
+// irishBeer.available = true;
+
+// console.log(irishBeer);
+
+
+/*
+  클래스 (Class)
+  객체 생성을 위한 틀
+  효율적인 객체 관리를 위해 사용된다
+
+  1 클래스의 구조
+  2 인스턴스
+  3 생성자
+  4 함수 멤버
+  5 static 멤버
+  6 내장된 클래스
+  7 자바스크립트에서 넓은 의미에서의 객체
+*/
+
+
+/*
+  클래스의 구조
+
+  1 클래스 선언
+  2 클래스 멤버
+*/
+
+
+// 1 클래스 선언
+
+// 클래스의 이름은 대문자로 시작해야 한다
+// class ClassA {
+//   // 클래스 정의
+// }
+
+
+// 2 클래스 멤버 - 클래스에 속한 데이터
+
+// class Beer {
+//   // 변수 멤버
+//   name;
+//   origin;
+//   available;
+
+//   // 함수 멤버
+//   drink() {
+//     return "시원하다!";
+//   }
+// }
+
+
+/*
+  인스턴스 (instance)
+  클래스로부터 생성된 객체
+
+  1 인스턴스 생성 방법
+  2 instanceof 연산자
+  3 여러개 인스턴스 생성하기
+*/
+
+// // 1 인스턴스 생성 방법
+// class Beer {
+//   name;
+//   origin;
+//   available;
+// }
+
+// // Beer 클래스의 인스턴스
+// var irishBeer = new Beer();
+
+// // 인스턴스에 속성값 할당
+// irishBeer.name = "Guinness"
+// irishBeer.origin = "Ireland"
+// irishBeer.available = false;
+
+// console.log(irishBeer);
+
+// // 클래스의 인스턴스인지 확인한다
+// console.log(irishBeer instanceof Beer); // true
+
+
+// 3 여러개의 인스턴스 생성하기
+// class Beer {
+//   name;
+//   origin;
+//   available;
+// }
+
+// var irishBeer = new Beer();
+// irishBeer.name = "Guinness"
+// irishBeer.origin = "Ireland"
+// irishBeer.available = false;
+
+// var dutchBeer = new Beer();
+// irishBeer.name = "Heineken"
+// irishBeer.origin = "Netherlands"
+// irishBeer.available = true;
+
+// var americanBeer = new Beer();
+// irishBeer.name = "Budwiser"
+// irishBeer.origin = "USA"
+// irishBeer.available = true;
+
+// console.log(irishBeer instanceof Beer); // true
+// console.log(dutchBeer instanceof Beer); // true
+// console.log(americanBeer instanceof Beer); // true
+
+
+/*
+  생성자 (constructor)
+
+  인스턴스의 속성 설정을 처리한다
+*/
+
+class Beer {
+  name;
+  origin;
+  available;
+
+  constructor (name, origin, available) {
+    // this - 인스턴스
+    this.name = name;
+    this.origin = origin;
+    this.available = available;
+  }
+}
+
+
+var irishBeer = new Beer("Guinness", "Ireland", false);
+var dutchBeer = new Beer("Heineken", "Netherlands", true);
+var americanBeer = new Beer("Budwiser", "USA", true);
