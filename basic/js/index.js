@@ -2027,20 +2027,368 @@ var r = arr1.concat(arr2);
   인스턴스의 속성 설정을 처리한다
 */
 
-class Beer {
-  name;
-  origin;
-  available;
+// class Beer {
+//   name;
+//   origin;
+//   available;
 
-  constructor (name, origin, available) {
-    // this - 인스턴스
-    this.name = name;
-    this.origin = origin;
-    this.available = available;
-  }
-}
+//   constructor (name, origin, available) {
+//     // this - 인스턴스
+//     this.name = name;
+//     this.origin = origin;
+//     this.available = available;
+//   }
+// }
 
 
-var irishBeer = new Beer("Guinness", "Ireland", false);
-var dutchBeer = new Beer("Heineken", "Netherlands", true);
-var americanBeer = new Beer("Budwiser", "USA", true);
+// var irishBeer = new Beer("Guinness", "Ireland", false);
+// var dutchBeer = new Beer("Heineken", "Netherlands", true);
+// var americanBeer = new Beer("Budwiser", "USA", true);
+
+
+/*
+  함수 멤버
+
+  인스턴스의 메서드가 된다
+*/
+
+
+// class Beer {
+
+//   // ..
+
+//   // 함수 멤버
+//   drink() {
+//     return "시원하다!";
+//   }
+// }
+
+// var beer = new Beer();
+
+// console.log(beer.drink());
+
+
+/*
+  static 멤버
+
+  클래스와 관련된 유용한 기능을 제공한다
+  클래스 자체가 호출한다
+*/
+
+
+// class Beer {
+  
+//   // ..
+
+//   // static 변수
+//   static history = "기원전 3000년 전";
+
+//   // static 함수
+//   static brewing() { // 양조(만드는 법)
+//     return "밀, 홉, 효모, 물 등";
+//   }
+// }
+
+// // 호출
+// console.log(Beer.history);
+// console.log(Beer.brewing());
+
+
+// 내장된 클래스의 static 속성
+// console.log(Math.PI);
+
+
+// 완성된 Beer클래스
+
+// class Beer {
+//   name;
+//   origin;
+//   available;
+
+//   constructor (name, origin, available) {
+//     this.name = name;
+//     this.origin = origin;
+//     this.available = available;
+//   }
+
+//   drink() {
+//     return "시원하다!";
+//   }
+
+//   static history = "기원전 3000년 전";
+
+//   static brewing() {
+//     return "밀, 홉, 효모, 물";
+//   }
+// }
+
+
+/*
+  Q. 클래스
+  다음을 만족하는 <Car>클래스를 선언해보세요
+
+  - 변수 멤버
+  1 name
+  2 brand (브랜드)
+  3 color
+
+  - 생성자 있음
+
+  - 함수 멤버
+  1 sound (배기음)
+  자동차 소리를 리턴한다
+
+  - static 함수
+  1 getAge
+  구매 연도를 입력하면 차의 나이를 알려준다
+*/
+
+
+// class Car {
+//   // 변수 멤버
+//   name;
+//   brand;
+//   color;
+
+//   // 생성자
+//   constructor (name, brand, color) {
+//     this.name = name;
+//     this.brand = brand;
+//     this.color = color;
+//   }
+
+//   // 함수 멤버
+//   sound() {
+//     return "부릉";
+//   }
+
+//   // static 함수
+//   static getAge(y) {
+//     return "차의 나이: " + (2024 - y);
+//   }
+// }
+
+// // 인스턴스
+// var car = new Car("GV80", "제네시스", "블랙");
+
+// console.log(car);
+
+// // 메서드
+// console.log(car.sound());
+
+// // static 함수 호출
+// console.log(Car.getAge(2022));
+
+
+/*
+  자바스크립트에 내장된 클래스
+
+  1 문자처리: String
+  2 숫자 및 날짜: Number, Math, Date
+  3 컬렉션: Array
+  4 에러: SyntaxError, ReferenceError, 기타 에러
+  5 기타: Promise, JSON, Object
+*/
+
+// 내장된 클래스 활용 예시
+
+// 현재 시간
+// var time = new Date().toLocaleDateString();
+// 수학관련 데이터
+// var PI = Math.PI;
+
+
+/*
+  넓은 의미에서 자바스크립트에서의 객체
+
+  1 예
+  2 리터럴 표기법
+*/
+
+
+// 1 예
+// 넓은 의미에서 모든 값은 객체이다
+
+// var foo = "bar"; // 객체
+
+// // 메서드 호출
+// console.log(foo.toUpperCase());
+
+
+// 2 리터럴 표기법
+
+// String 클래스의 인스턴스
+
+// var foo = "bar"; // 우항에 값만 작성 - 리터럴 표기법
+// var foo = new String("bar");
+
+
+// 리터럴 표기 불가
+// var date = new Date();
+
+// console.log(date);
+
+
+/*
+  에러와 예외
+
+  1 에러 
+  2 예외
+*/
+
+
+/*
+  에러 (Error)
+  
+  debugging (bug를 잡는다)
+
+  에러는 프로그램을 중단시킨다
+  에러는 반드시 고쳐야 한다
+*/
+
+
+// console.log(foo);
+// name: ReferenceError
+// message: foo is not defined
+// stack: 나머지
+
+
+/*
+  예외 (Exception)
+
+  의도적으로 발생시키는 에러 (필요한 경우)
+
+  예) 인증절차
+*/
+
+
+// 사용자가 로그인을 시도할때 입력한 비밀번호
+// var input = "12";
+// // 올바른 비밀번호
+// var password = "123";
+
+// // 인증실패 처리
+// if (input != password) {
+//   // 예외를 던진다(throw)
+//   throw "비밀번호가 일치하지 않습니다";
+// }
+
+
+// 예외 처리
+// try / catch 구문
+
+// var password = "123";
+// var input = "12";
+
+// try { // 코드 작성
+//   if (input != password) {
+//     throw "비밀번호가 일치하지 않습니다";
+//   }
+  
+//   // 실행되지 않는다
+//   console.log("로그인 성공");
+
+// } catch (error) { // 에러 처리
+//   console.log("로그인 실패:", error);
+// }
+
+
+
+/*
+  비동기 작업
+  프로그램에서 블로킹(blocking)을 방지하기 위해 사용된다
+  예) 서버에서 데이터를 가져올 때
+  
+  * blocking - 중단, 정체
+
+  1 동기 작업
+  2 비동기 작업
+*/
+
+
+// 동기 작업 (Synchronous operation)
+// 작업이 순서대로 실행된다
+
+// function f() {
+//   console.log("작업 1");
+// }
+
+// f();
+// console.log("작업 2");
+
+
+
+// 비동기 작업(Asynchronous operation)
+// 빠른 작업부터 실행된다
+
+// 서버에서 데이터를 가져오는 과정 (가정)
+
+// 서버에 데이터를 요청하는 함수
+// function getData(callback) {
+//   // 서버에서 데이터를 가져오는데 1초가 걸린다고 가정
+//   setTimeout(function () {
+//     callback(null, "야옹");
+//   }, 1000);
+// }
+
+// // 데이터 요청
+// getData(function (err, data) {
+//   if (err) {
+//     return console.error(err);
+//   }
+
+//   console.log("서버에서 전달받은 데이터:", data);
+// });
+
+// console.log("다음 작업");
+
+
+/*
+  JSON
+
+  1 JSON 개념
+  2 JSON.stringify
+  3 JSON.parse
+*/
+
+
+/*
+  JSON 개념
+
+  JavaScript Object Notation(자바스크립트 객체 표기법)의
+  약자.
+  객체를 저장하거나 전송하기 위한 텍스트 포맷
+*/
+
+
+// var cat_json = '{ "name": "치즈" }';
+
+// console.log(typeof cat_json); // string
+
+
+
+// JSON.stringify()
+// 객체를 JSON으로 변환한다
+
+// 객체
+// var cat = { name: "치즈" };
+
+// var cat_json = JSON.stringify(cat);
+
+// console.log(cat_json);
+// // '{ "name": "치즈" }'
+// console.log(typeof cat_json);
+// // string
+
+
+// JSON.parse()
+// JSON을 객체로 변환한다
+
+
+
+// var cat_json = '{ "name": "치즈" }';
+
+// var cat = JSON.parse(cat_json);
+
+// console.log(cat); // 객체
+// console.log(typeof cat); // object
