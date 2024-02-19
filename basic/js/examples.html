@@ -77,6 +77,330 @@
     }
   </script> -->
 
+
+  <!-- <h1>비밀번호 보기 버튼</h1>
+
+  <style>
+    .container {
+      position: relative;
+      width: 16rem;
+    }
+
+    #input {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+
+    #btn {
+      /* position */
+      position: absolute;
+      top: 0;
+      right: 0;
+      /* size */
+      height: 100%;
+      /* design */
+      border: none;
+      background-color: transparent;
+      padding: 0 1rem;
+      font-weight: 600;
+      /* misc */
+      cursor: pointer;
+    }
+  </style>
+
+
+  <div class="container">
+    <input id="input" type="password" value="1234">
+    <button id="btn">Show</button>
+  </div>
+
+
+  <script>
+    var input = document.getElementById("input");
+    var btn = document.getElementById("btn");
+
+    btn.addEventListener("click", handleClick);
+
+    function handleClick() {
+      // 타입 체크
+      console.log(input.type);
+
+      if (input.type == "text") {
+        input.type = "password";
+        // this = btn
+        this.textContent = "Show";
+      } else {
+        input.type = "text";
+        this.textContent = "Hide";
+      }
+    };
+  </script> -->
+
+
+  <!-- <h1>더보기 버튼</h1>
+
+  <style>
+    #btn {
+      color: #888;
+      cursor: pointer;
+    }
+  </style>
+
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing<span id="dots">...</span>
+  </p>
+
+  <span id="btn">더보기</span>
+
+
+  <script>
+    var dots = document.getElementById("dots");
+    var btn = document.getElementById("btn");
+    
+    btn.addEventListener("click", handleClick);
+
+    function handleClick() {
+      // 나머지 내용
+      var data = ` elit. Odit architecto tenetur libero, 
+      eos deleniti ratione repudiandae perspiciatis culpa expedita, 
+      debitis a ipsa corporis cumque cum. Sunt iure nam unde facilis!`;
+
+      /// ...을 나머지 내용으로 바꾼다
+      dots.textContent = data;
+
+      // 버튼 제거
+      btn.remove();
+      // 엘리먼트.remove() - 엘리먼트를 제거한다
+    };
+  </script> -->
+
+
+  <!-- <h1>탑버튼</h1>
+
+  <style>
+    body {
+      /* 
+        calc() 함수
+        계산된 값을 적용할 수 있다
+      */
+      height: calc(100vh + 200px);
+    }
+
+    #btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 512 512"
+    id="btn"
+    class="hidden"
+  >
+    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/>
+  </svg>
+
+  <script>
+    var btn = document.getElementById('btn');
+
+    // document = HTML 문서
+    // scroll - 스크롤 
+    document.addEventListener('scroll', handleScroll);
+    // 탑버튼을 클릭했을 때
+    btn.addEventListener("click", handleClick);
+
+    function handleScroll() {
+      // this = document
+      // scrollTop - 뷰포트탑과 문서탑 사이의 거리
+      var scrollTop = this.documentElement.scrollTop;
+
+      console.log("scroll top:", scrollTop);
+
+      if (scrollTop > 100) { // 충분히 스크롤한 경우
+        // 탑버튼을 나타나게 한다
+        btn.classList.remove("hidden");
+      } else { // 충분히 스크롤하지 않은 경우
+        // 탑버튼을 숨긴다
+        btn.classList.add("hidden");
+      }
+    };
+
+    function handleClick() {
+      // 제일 위로 이동
+      document.documentElement.scrollTop = 0;
+    };
+  </script> -->
+
+  <!-- <h1>script에서 버튼 비활성화</h1>
+
+  <button id="btn">button</button>
+
+  <script>
+    var btn = document.getElementById("btn");
+
+    btn.disabled = true;
+  </script> -->
+
+
+  <!-- <h1>카트 추가 버튼</h1>
+
+  <style>
+    #btn {
+      /* layout */
+      display: flex;
+      align-items: center;
+      /* design */
+      background-color: #e00;
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+  
+    .icon {
+      width: 1rem;
+      fill: #fff;
+    }
+  
+    .text {
+      margin-left: 0.5rem;
+    }
+  
+    #btn:disabled {
+      /* 불투명도 */
+      opacity: 0.5;
+    }
+  </style>
+  
+  <button id="btn">
+    <svg 
+      class="icon"
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 576 512"
+    >
+      <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+    </svg>
+    <span class="text">Add To Cart</span>
+  </button>
+
+  <script>
+    var btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function () {
+      alert("추가되었습니다"); // 메시지
+
+      // 버튼 비활성화
+      this.disabled = true;
+    })
+  </script> -->
+
+
+  <!-- <style>
+    header {
+      /* position */
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* size */
+      width: 100%;
+      /* design */
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #btn {
+      border: none;
+      background-color: transparent;
+      font-size: 2rem;
+    }
+
+    #nav {
+      border-bottom: 1px solid #ddd;
+    }
+
+    #nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .link {
+      display: block;
+      padding: 0.5rem;
+      text-align: center;
+      color: #000;
+    }
+
+    main {
+      margin-top: 4rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+
+  <header>
+    <div class="header-inner">
+      <button id="btn">&#9776;</button>
+    </div>
+    <nav class="hidden" id="nav">
+      <ul>
+        <li>
+          <a href="#" class="link">Link</a>
+        </li>
+        <li>
+          <a href="#" class="link">Link</a>
+        </li>
+        <li>
+          <a href="#" class="link">Link</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Top navigation</h1>
+  </main>
+
+
+  <script>
+    var btn = document.getElementById("btn");
+    var nav = document.getElementById("nav");
+
+    // 메뉴버튼을 클릭했을 때
+    btn.addEventListener("click", function () {
+      // toggle - 클래스가 있으면 제거, 없으면 추가한다
+      nav.classList.toggle("hidden");
+    })
+
+
+    // document(경기장) - 이벤트 감지 가능 영역
+    document.addEventListener("click", function (e) {
+      // e.target(손흥민의 좌표) - 실제 이벤트가 발생한 엘리먼트
+      console.log("event target:", e.target);
+
+      // 도큐먼트에서 메뉴 버튼을 제외한 부분을 클릭했을 때
+      if (e.target !== btn) {
+        nav.classList.add("hidden");
+      }
+    })
+  </script> -->
+
   
 </body>
 </html>
