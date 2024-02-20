@@ -401,6 +401,303 @@
     })
   </script> -->
 
+  <!-- <style>
+    body {
+      height: calc(100vh + 200px);
+      margin: 0;
+    }
+
+    #header {
+      /* posiiton */
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* size */
+      width: 100%;
+      /* design */
+      color: #fff;
+      /* misc */
+      transition: all 0.5s;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .bg-image {
+      background-image: linear-gradient(to right, #222, #000);
+      height: 400px;
+    }
+
+    #header.active {
+      background-color: #fff;
+      color: #000;
+    }
+  </style>
+
+  <header id="header">
+    <h3 class="logo">Transparent NavBar</h3>
+  </header>
+
+  <div class="bg-image"></div>
+
+
+  <script>
+    var header = document.getElementById('header');
+
+    document.addEventListener('scroll', handleScroll);
+
+    function handleScroll() {
+      // 뷰포트탑과 문서탑 사이의 거리
+      var scrollTop = document.documentElement.scrollTop;
+
+      console.log("scroll top: ", scrollTop);
+
+      if (scrollTop > 100) { // 충분히 스크롤 한 경우
+        header.classList.add('active');
+      } else { // 충분히 스크롤하지 않은 경우
+        header.classList.remove('active');
+      }
+    }
+  </script> -->
+
+
+  <!-- <style>
+    #side-bar {
+      /* position */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      /* size */
+      width: 16rem;
+      height: 100vh;
+      /* design */
+      background-color: #fff;
+      /* misc */
+      transition: left 0.2s;
+    }
+
+    .logo {
+      padding: 1rem;
+    }
+
+    .link {
+      color: #000;
+    }
+
+    #overlay {
+      /* position */
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* design */
+      background-color: rgba(0 0 0 / 0.2);
+    }
+
+    #side-bar.hidden {
+      left: -16rem;
+    }
+
+    #overlay.hidden {
+      display: none;
+    }
+  </style>
+
+  <h1>Side Bar</h1>
+
+  <button id="btn">Open</button>
+
+  <nav id="side-bar" class="hidden">
+    <h1 class="logo">LOGO</h1>
+    <ul>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="overlay" class="hidden"></div>
+
+
+  <script>
+    var btn = document.getElementById("btn");
+    var sideBar = document.getElementById("side-bar");
+    var overlay = document.getElementById("overlay");
+
+    // 열기 버튼 클릭
+    btn.addEventListener("click", function () {
+      sideBar.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+    })
+
+    // 오버레이를 클릭했을 때
+    overlay.addEventListener("click", function () {
+      sideBar.classList.add("hidden");
+      this.classList.add("hidden");
+    })
+  </script> -->
+  
+
+  <!-- <style>
+    #side-bar {
+      /* position */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      /* size */
+      width: 100%;
+      height: 100%;
+      /* design */
+      background-color: #fff;
+      /* misc */
+      transition: left 0.2s;
+    }
+
+    .logo {
+      padding: 1rem;
+    }
+
+    .link {
+      color: #000;
+    }
+
+    #close-btn {
+      /* position */
+      position: absolute;
+      top: 0;
+      right: 0;
+      /* design */
+      padding: 0.5rem 1rem;
+      font-size: 2rem;
+      /* misc */
+      cursor: pointer;
+    }
+
+    #side-bar.hidden {
+      left: -100vw;
+    }
+  </style>
+
+  <h1>Side Bar</h1>
+
+  <button id="open-btn">Open</button>
+
+  <nav id="side-bar" class="hidden">
+    <h1 class="logo">LOGO</h1>
+    <span id="close-btn">&times;</span>
+    <ul>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+      <li>
+        <a href="#" class="link">Link</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <script>
+    var sideBar = document.getElementById("side-bar");
+    var openBtn = document.getElementById("open-btn");
+    var closeBtn = document.getElementById("close-btn");
+
+    // 열기 버튼 클릭
+    openBtn.addEventListener("click", function () {
+      sideBar.classList.remove("hidden");
+    })
+
+    // 닫기 버튼 클릭
+    closeBtn.addEventListener("click", function () {
+      sideBar.classList.add("hidden");
+    })
+  </script> -->
+
+
+  <style>
+    body {
+      min-height: calc(100vh + 200px);
+    }
+
+    #header {
+      /* position */
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* size */
+      width: 100%;
+      height: 3rem;
+      /* layout */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* design */
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      font-weight: 600;
+      /* misc */
+      transition: top 0.2s;
+    }
+    
+    #header.hidden {
+      top: -3rem;
+    }
+
+    .content {
+      color: #ddd;
+      font-size: 4rem;
+    }
+  </style>
+
+  <header id="header">
+    Switch Header
+  </header>
+
+  <h1 class="content">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    Delectus nobis commodi sit est nesciunt labore laboriosam 
+    inventore eveniet! Nemo qui suscipit maxime. 
+    Vel veritatis cumque ipsam quam, ducimus distinctio itaque?
+  </h1>
+
+
+  <script>
+    var header = document.getElementById("header");
+    var prevScrollTop = 0;
+
+    document.addEventListener("scroll", handleScroll);
+
+    function handleScroll() {
+      var scrollTop = document.documentElement.scrollTop;
+
+
+      // 이전 시점의 변수값에 접근 (prevScrollTop)
+      console.log("이전 스크롤탑:", prevScrollTop);
+      console.log("현재 스크롤탑:", scrollTop);
+
+      if (scrollTop > prevScrollTop) { // 스크롤을 내리는 중
+        header.classList.add("hidden");
+      } else { // 스크롤을 올리는 중
+        header.classList.remove("hidden");
+      }
+
+      // 대입 시점
+      prevScrollTop = scrollTop;
+    }
+  </script>
+
   
 </body>
 </html>
