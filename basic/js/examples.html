@@ -626,7 +626,7 @@
   </script> -->
 
 
-  <style>
+  <!-- <style>
     body {
       min-height: calc(100vh + 200px);
     }
@@ -696,8 +696,275 @@
       // 대입 시점
       prevScrollTop = scrollTop;
     }
-  </script>
+  </script> -->
 
+
+  <!-- <h1>실시간 검색</h1>
+
+  <style>
+    #input {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item {
+      padding: 0.5rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <input type="search" name="" id="input" placeholder="Search">
+  
+  <ul>
+    <li class="item">guinness</li>
+    <li class="item">heineken</li>
+    <li class="item">budwiser</li>
+    <li class="item">kloud</li>
+    <li class="item">asahi</li>
+  </ul>
+
+  <script>
+    var input = document.getElementById("input");
+    var items = document.getElementsByClassName("item");
+
+    // keyup - 키에서 손가락을 뗄 때
+    input.addEventListener("keyup", handleKeyup);
+
+    function handleKeyup() {
+      // 검색어를 소문자로 변환한 값
+      var q = this.value.toLowerCase();
+      // 대소문자를 가리지 않는 검색 기능
+
+      console.log("검색어:", q);
+
+      // 아이템 중에서 검색어를 포함하지 않은 아이템은 숨긴다
+
+      for (var i = 0; i < items.length; i++) {
+        // 각각의 아이템
+        var item = items[i];
+  
+        // 검색어를 포함한 경우
+        if (item.textContent.indexOf(q) > -1) {
+          item.classList.remove("hidden");
+        } else { // 검색어를 포함하지 않은 경우
+          item.classList.add("hidden");
+        }
+      }
+    }
+  </script> -->
+
+
+  <!-- <h1>댓글 버튼</h1>
+
+  <input type="text" name="" id="input">
+  <button id="btn" disabled>Send</button>
+
+
+  <script>
+    var input = document.getElementById("input");
+    var btn = document.getElementById("btn");
+
+    input.addEventListener("keyup", handleKeyup);
+
+    function handleKeyup() {
+      console.log("댓글:", this.value);
+
+      if (this.value == "") { // 내용이 없을 때
+        btn.disabled = true;
+      } else { // 내용이 있을 때
+        btn.disabled = false;
+      }
+    }
+  </script> -->
+
+
+  <!-- <h1>실시간 유효성 검사</h1>
+
+  <style>
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    #input {
+      width: 20rem;
+      box-sizing: border-box;
+      padding: 0.5rem;
+    }
+
+    .success {
+      color: #0a0;
+    }
+
+    .warning {
+      color: #f00;
+    }
+  </style>
+
+  <label for="input">Password</label>
+  <input type="text" id="input">
+
+  <p id="message"></p>
+
+  <script>
+    var input = document.getElementById('input');
+    var message = document.getElementById("message");
+    // 정규식
+
+    // 소문자를 포함하는지 확인하기 위한 패턴
+    var lowerCasePatt = /[a-z]/
+    // 대문자 포함 여부
+    var upperCasePatt = /[A-Z]/
+    // 숫자 포함 여부
+    var numberPatt = /[0-9]/
+
+    /*
+      정규식 (Regular Expression)
+
+      문자열을 검사하기 위한 패턴
+      검사를 이행하기 위한 몇가지 메서드를 가지고 있다
+
+      1 값
+      /패턴/
+
+      2 메서드
+      test(검사할 문자열) - 검사 결과에 따라 Boolean 값을 리턴한다
+    */
+
+    input.addEventListener("keyup", handleKeyup);
+
+    function handleKeyup() {
+      var password = this.value;
+
+      console.log("password:", password);
+
+      try {
+        if (!password) {
+          throw '비밀번호는 필수입니다';
+        }
+
+        if (!lowerCasePatt.test(password)) {
+          throw "최소 한개 이상의 소문자를 포함해야 합니다";
+        }
+
+        if (!upperCasePatt.test(password)) {
+          throw "최소 한개 이상의 대문자를 포함해야 합니다";
+        }
+
+        if (!numberPatt.test(password)) {
+          throw "최소 한개 이상의 숫자를 포함해야 합니다";
+        }
+
+        if (password.length < 8) {
+          throw "비밀번호는 8글자 이상이어야 합니다";
+        }
+
+        message.innerHTML = `<span class="success">안전한 비밀번호 입니다</span>`;
+
+      } catch (error) {
+        message.innerHTML = `<span class="warning">${error}</span>`;  
+      } 
+    }
+  </script> -->
+
+
+  <!-- <h1>뉴스레터 폼</h1>
+
+  <style>
+    .container {
+      display: flex;
+    }
+
+    input {
+      padding: 0.5rem;
+      flex-grow: 1;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+
+
+  <form action="/server" id="form">
+    <div class="container">
+      <input type="text" name="email" placeholder="johnDoe@example.com">
+      <button class="btn">Subscribe</button>
+    </div>
+  </form>
+
+  <p id="done" class="hidden">
+    Thank you for subscribing us!
+  </p>
+
+
+  <script>
+    var form = document.getElementById("form");
+    var done = document.getElementById("done");
+    // 이메일 검사 패턴
+    var patt = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/
+
+    // submit - 폼 제출
+    form.addEventListener("submit", handleSubmit);
+
+    function handleSubmit(e) {
+      // 서버 요청 취소
+      e.preventDefault();
+
+      /*
+        preventDefault()
+
+        이벤트의 기본 행위를 취소한다
+        submit 이벤트의 기본 행위는 서버에 요청을 전송하는 것이다.
+        submit 이벤트의 기본 행위 취소는 클라이언트측 유효성 검사
+        또는 AJAX 요청시에 이행된다
+
+        * AJAX 요청 - 새로고침없이 서버에 요청을 전송하는 기술
+      */
+
+      // 유저가 입력한 이메일에 접근
+      var email = form.elements["email"].value;
+      // form.elements[name] - name(애트리뷰트)으로 폼데이터에 접근한다
+
+      try {
+        if (!patt.test(email)) {
+          throw "올바른 이메일을 입력하세요";
+        }
+        
+        // 폼을 숨기고
+        form.classList.add("hidden");
+        // 땡큐메시지를 보여준다
+        done.classList.remove("hidden");
+      
+      } catch (error) {
+        // 에러 메시지
+        alert(error)
+      }
+    }
+  </script> -->
+
+
+  <h1>컨택 폼</h1>
+
+  <script>
+    // 이름 검사 패턴
+    var fnamePatt = /^[a-zA-Z]+$/;
+    // 성 검사 패턴
+    var lnamePatt = /^[a-zA-Z]+$/;
+    // 핸드폰 번호 검사 패턴 (숫자만 가능)
+    var phonePatt = /^\d{5,11}$/;
+  </script>
   
 </body>
 </html>
