@@ -955,16 +955,336 @@
   </script> -->
 
 
-  <h1>컨택 폼</h1>
+  <!-- <h1>컨택폼</h1>
+
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .col-span-2 {
+      grid-column-start: span 2;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <form action="" id="form">
+    <div class="container">
+      <div class="form-group">
+        <label for="fname">First name</label>
+        <input type="text" id="fname" name="fname" placeholder="John">
+      </div>
+  
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Doe">
+      </div>
+  
+      <div class="form-group col-span-2">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" placeholder="01012345678">
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="done" class="hidden">
+    Thank you and we"ll contact with you soon
+  </p>
+
 
   <script>
-    // 이름 검사 패턴
+    var form = document.getElementById("form");
+    // 검사용 패턴
     var fnamePatt = /^[a-zA-Z]+$/;
-    // 성 검사 패턴
     var lnamePatt = /^[a-zA-Z]+$/;
-    // 핸드폰 번호 검사 패턴 (숫자만 가능)
     var phonePatt = /^\d{5,11}$/;
-  </script>
+
+    form.addEventListener("submit", handleSubmit);
+
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      // 유저가 입력한 값에 접근
+      var fname = form.elements["fname"].value;
+      var lname = form.elements["lname"].value;
+      var phone = form.elements["phone"].value;
+
+      // 유효성 검사
+      try {
+        // first name check
+        if (!fnamePatt.test(fname)) {
+          throw "Invalid first name";
+        }
   
+        // last name check
+        if (!lnamePatt.test(lname)) {
+          throw "Invalid last name";
+        }
+  
+        // phone check
+        if (!phonePatt.test(phone)) {
+          throw "Invalid phone number";
+        } 
+  
+        // 폼을 숨기고 땡큐메시지를 보여준다
+        form.classList.add("hidden");
+        done.classList.remove("hidden");
+
+      } catch (error) { 
+        alert(error)
+      }
+    }
+  </script> -->
+
+
+  <!-- <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    #main {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+    
+    .thumbnails {
+      /* size */
+      width: 300px;
+      height: 100px;
+      /* layout */
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .photo {
+      /* size */
+      width: 100%;
+      height: 100%;
+      /* misc */
+      object-fit: cover;
+      /* effect */
+      opacity: 0.8;
+    }
+
+    .prev-btn, .next-btn {
+      /* position */
+      position: absolute;
+      height: 100%;
+      top: 0;
+      /* design */
+      padding: 0.75rem;
+      border: none;
+      background-color: transparent;
+      color: rgba(255 255 255 / 0.5);
+      font-size: 2rem;
+    }
+
+    .prev-btn {
+      left: 0;
+    }
+
+    .next-btn {
+      right: 0;
+    }
+
+    .active {
+      opacity: 1;
+    }
+  </style>
+
+ 
+  <h1>Gallery</h1>
+  
+  <div class="container">
+    <img src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="" id="main">
+    <button class="prev-btn" onclick="walk(-1)">&#10094;</button>
+    <button class="next-btn" onclick="walk(1)">&#10095;</button>
+  </div>
+  
+  <div class="thumbnails">
+    <img class="photo active" src="https://tvvmvn.github.io/front-end/img/Simba.webp" onclick="jump(0)" alt="">
+    <img class="photo" src="https://tvvmvn.github.io/front-end/img/Timon.webp" onclick="jump(1)" alt="">
+    <img class="photo" src="https://tvvmvn.github.io/front-end/img/Pumbaa.webp" onclick="jump(2)" alt="">
+  </div>
+
+
+  <script>
+    var photos = document.getElementsByClassName("photo");
+    var main = document.getElementById("main");
+    var firstIndex = 0;
+    var lastIndex = photos.length - 1; // 2
+    // photo index
+    var index = 0;
+
+
+    // 버튼을 클릭했을 때
+    function walk(data) {
+      index += data;
+
+      // 인덱스 값이 0에서 2사이의 값을 갖도록 만든다
+      if (index < firstIndex) index = lastIndex;
+      if (index > lastIndex) index = firstIndex;
+
+      // 썸네일에 접근하기 위한 index
+      console.log("index:", index);
+
+      // 메인 이미지 업데이트
+      setImage();
+      // 썸네일 효과
+      setActive();
+    }
+
+    // 썸네일을 클릭했을 때
+    function jump(data) {
+      index = data;
+
+      console.log("index:", index);
+
+      // 메인 이미지 업데이트
+      setImage();
+      // 썸네일 효과
+      setActive();
+    }
+
+    // 메인 이미지 업데이트 처리
+    function setImage() {
+      // 특정 썸네일의 소스를 메인 이미지의 소스에 전달한다
+      main.src = photos[index].src;
+    };
+
+    // 썸네일 효과 처리
+    function setActive() {
+      for (var i = 0; i < photos.length; i++) {
+        if (i == index) { // index 변수와 일치하는 인덱스(변수 i)의 썸네일인 경우
+          photos[i].classList.add("active");
+        } else { // 나머지 썸네일
+          photos[i].classList.remove("active");
+        }
+      }
+    }
+  </script> -->
+
+
+  <!-- <script>
+    // setInterval(callback, ms) - ms마다 callback을 실행한다
+    setInterval(interval, 1000);
+
+    function interval() {
+      // 현재시간 출력
+      console.log(new Date().toLocaleTimeString());
+    }
+  </script> -->
+
+
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    #main {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+    
+    .thumbnails {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+
+    .active {
+      outline: 4px solid #fff;
+      z-index: 1;
+    }
+  </style>
+  
+ 
+  <h1>Auto Album</h1>
+  
+  <div class="container">
+    <img src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="" id="main">
+    <div class="thumbnails">
+      <img class="photo active" src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="">
+      <img class="photo" src="https://tvvmvn.github.io/front-end/img/Timon.webp" alt="">
+      <img class="photo" src="https://tvvmvn.github.io/front-end/img/Pumbaa.webp" alt="">
+    </div>
+  </div>
+
+
+  <script>
+    var photos = document.getElementsByClassName('photo');
+    var main = document.getElementById('main');
+    var index = 0;
+
+    setInterval(interval, 3000);
+
+    function interval() {
+      index++;
+
+      // index가 0에서 2 사이의 범위를 갖게한다
+      if (index > 2) index = 0;
+
+      console.log("index:", index);
+
+      setImage();
+      setActive();
+    }
+
+    // 메인 이미지 업데이트 처리
+    function setImage() {
+      main.src = photos[index].src;
+    }
+
+    // 아웃라인 효과 처리
+    function setActive() {
+      for (var i=0; i<photos.length; i++) {
+        if (i == index) {
+          photos[i].classList.add("active");
+        } else {
+          photos[i].classList.remove("active");
+        }
+      }
+    }
+  </script>
+
 </body>
 </html>
