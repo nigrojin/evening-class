@@ -1204,7 +1204,7 @@
   </script> -->
 
 
-  <style>
+  <!-- <style>
     .container {
       position: relative;
       width: 300px;
@@ -1284,7 +1284,238 @@
         }
       }
     }
-  </script>
+  </script> -->
+
+
+  <!-- <h1>Carousel</h1>
+
+  <style>
+    #carousel {
+      /* size */
+      width: 200px;
+      height: 200px;
+      /* position */
+      position: relative;
+      /* misc */
+      overflow-x: hidden;
+    }
+
+    #container {
+      /* size */
+      width: 600px;
+      /* layout */
+      display: flex;
+      /* misc */
+      transition: transform 0.2s;
+    }
+
+    .photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    #prev-btn, #next-btn {
+      /* position */
+      position: absolute;
+      top: 0;
+      height: 100%;
+      /* design */
+      background-color: transparent;
+      border: none;
+      color: rgba(255 255 255 / 0.5);
+      font-size: 2rem;
+    }
+
+    #prev-btn {
+      left: 0;
+    }
+
+    #next-btn {
+      right: 0;
+    }
+
+    .indicator {
+      /* position */
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      /* layout */
+      display: flex;
+      justify-content: center;
+    }
+
+    .dot {
+      /* design */
+      display: block;
+      background-color: #fff;
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      margin: 0 2px;
+      /* effect */
+      opacity: 0.5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .active {
+      opacity: 1;
+    }
+  </style>
+
+  <div id="carousel">
+    <div id="container">
+      <img class="photo" src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="">
+      <img class="photo" src="https://tvvmvn.github.io/front-end/img/Timon.webp" alt="">
+      <img class="photo" src="https://tvvmvn.github.io/front-end/img/Pumbaa.webp" alt="">
+    </div>
+
+    <button id="prev-btn" class="hidden" onclick="main(-1)">&#10094;</button>
+    <button id="next-btn" onclick="main(1)">&#10095;</button>
+
+    <div class="indicator">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+
+  <script>
+    // container and photos
+    var carousel = document.getElementById('carousel');
+    var container = document.getElementById('container');
+    var photos = document.getElementsByClassName("photo");
+    var imageWidth = 200;
+    // index and left
+    var index = 0;
+    var firstIndex = 0;
+    var lastIndex = photos.length - 1;
+    var x = 0;
+    // buttons
+    var prevBtn = document.getElementById('prev-btn');
+    var nextBtn = document.getElementById('next-btn');
+    // indicator
+    var dots = document.getElementsByClassName('dot');
+
+    // 메인 함수
+    function main(data) {
+      index += data;
+      x = -(index * imageWidth);
+
+      console.log(`index: ${index}, x: ${x}`);
+
+      // 컨테이너 이동
+      setImage();
+      // 버튼 처리
+      setButton();
+      // 인디케이터 처리
+      setIndicator();
+    };
+    
+    // 컨테이너 이동 처리
+    function setImage() {
+      container.style.transform = `translateX(${x}px)`;
+    }
+
+    // 버튼 처리
+    function setButton() {
+      // 이전 버튼
+      if (index == firstIndex) { // 첫번째 이미지일 때
+        prevBtn.classList.add('hidden');
+      } else { // 첫번째 이미지가 아닐 때
+        prevBtn.classList.remove('hidden');
+      }
+  
+      // 다음 버튼
+      if (index == lastIndex) { // 마지막 이미지 일때
+        nextBtn.classList.add('hidden');
+      } else { // 마지막 이미지가 아닐 때
+        nextBtn.classList.remove('hidden');
+      }
+    };
+
+    // 인디케이터 처리
+    function setIndicator() {
+      for (var i = 0; i < dots.length; i++) {
+        if (i == index) {
+          dots[i].classList.add('active');
+        } else {
+          dots[i].classList.remove('active');
+        }
+      }
+    };
+  </script> -->
+
+  <!-- <h1>Modal</h1>
+
+  <style>
+    #overlay {
+      /* position */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* design */
+      background-color: rgba(0 0 0 / 0.2);
+    }
+
+    .modal {
+      /* layout */
+      width: 20rem;
+      margin: 100px auto 0;
+      /* design */
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <button id="btn">Open</button>
+
+  <div id="overlay" class="hidden">
+    <div class="modal">
+      <h1>Heading</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Quod, asperiores quam? 
+        Porro, sit cum maiores odio reprehenderit ea, 
+        molestiae quibusdam iusto eos, 
+        id molestias quas ipsam temporibus quo quam distinctio!
+      </p>
+    </div>
+  </div>
+
+
+  <script>
+    var overlay = document.getElementById("overlay");
+    var btn = document.getElementById("btn");
+
+    // 열기 버튼 클릭
+    btn.addEventListener("click", function () {
+      overlay.classList.remove("hidden");
+    })
+
+    // 오버레이 클릭
+    overlay.addEventListener("click", function (e) {
+
+      // 실제 이벤트가 발생한 엘리먼트
+      console.log("event target:", e.target);
+
+      // 클릭한 부분이 모달을 제외한 오버레이일때
+      if (e.target == this) {
+        this.classList.add("hidden");
+      }
+    })
+  </script> -->
+
 
 </body>
 </html>
