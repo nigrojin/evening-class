@@ -1517,5 +1517,299 @@
   </script> -->
 
 
+  <!-- <h1>Q. Modal Gallery</h1>
+
+  <style>
+    #overlay {
+      /* position */
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      /* design */
+      background-color: rgba(0 0 0 / 0.8);
+    }
+
+    .modal {
+      /* layout */
+      margin: 100px auto 0;
+      display: block;
+      /* size */
+      width: 300px;
+      height: 300px;
+    }
+    
+    #modal-image {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+
+    #caption {
+      color: #fff;
+      text-align: center;
+    }
+
+    .thumbnails {
+      display: flex;
+    }
+
+    .photo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .photo:hover {
+      opacity: 1;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+  
+
+  <div id="overlay" class="hidden">
+    <div class="modal">
+      <img id="modal-image" src="" alt="">
+      <h3 id="caption"></h3>
+    </div>
+  </div>
+  
+  <div class="thumbnails">
+    <img class="photo" src="https://tvvmvn.github.io/front-end/img/Simba.webp" alt="Simba" onclick="openModal(0)">
+    <img class="photo" src="https://tvvmvn.github.io/front-end/img/Timon.webp" alt="Timon" onclick="openModal(1)">
+    <img class="photo" src="https://tvvmvn.github.io/front-end/img/Pumbaa.webp" alt="Pumba" onclick="openModal(2)">
+  </div>
+
+
+
+  <script>
+    var overlay = document.getElementById("overlay");
+    var modalImage = document.getElementById("modal-image");
+    var photos = document.getElementsByClassName("photo");
+    var caption = document.getElementById("caption");
+
+    // 썸네일을 클릭했을 때
+    function openModal(index) {
+      console.log("index:", index);
+
+      // 이미지
+      modalImage.src = photos[index].src;
+      // 캡션
+      caption.textContent = photos[index].alt;
+
+      overlay.classList.remove("hidden");
+    }
+
+    // 모달 닫기
+    overlay.addEventListener("click", function () {  
+      this.classList.add("hidden");
+    })
+  </script> -->
+
+
+
+  <!-- <h1>테마 선택</h1>
+
+  <style>
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+
+  <input type="checkbox" id="checkbox" name="">
+  <label for="checkbox">Dark Mode</label>
+
+  <ul id="list">
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
+
+  <script>
+    var checkbox = document.getElementById("checkbox");
+    var list = document.getElementById("list");
+
+    // 페이지가 열릴 때
+    document.addEventListener("DOMContentLoaded", handleLoaded);
+
+    // 체크 상태가 바뀔 때
+    checkbox.addEventListener("change", handleChange);
+
+    function handleLoaded() {
+      // 데이터가 없을 경우 null을 리턴한다
+      var darkTheme = localStorage.getItem("darkTheme");
+
+      console.log("darkTheme:", darkTheme);
+
+      if (darkTheme) { // 데이터가 있는 경우
+        list.classList.add("dark-mode"); // 다크모드 적용
+        // 체크박스 동기화
+        checkbox.checked = true;
+      }
+    }
+
+    function handleChange() {
+      console.log("checked:", this.checked);
+
+      if (this.checked) { // 체크됨
+        list.classList.add("dark-mode");
+        // 로컬스토리지 동기화
+        localStorage.setItem("darkTheme", "on");
+      } else { // 안 체크됨
+        list.classList.remove("dark-mode");
+         // 로컬스토리지 동기화
+        localStorage.removeItem("darkTheme");
+      }
+    }
+  </script> -->
+
+
+  <!-- <h1>그만보기 버튼</h1>
+
+  <style>
+    .text {
+      color: #ddd;
+    }
+
+    #block-btn, #close-btn {
+      padding: 0.5rem 0.75rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <div id="promotion">
+    <h1 class="text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Eos eveniet maxime iste vitae odit iure totam quaerat, amet, 
+      minus voluptatum quasi non ipsa libero provident illum, 
+      recusandae nesciunt ratione. Tempore!
+    </h1>
+    <button id="close-btn">닫기</button>
+    <button id="block-btn">더 이상 보지않기</button>
+  </div>
+
+
+  <script>
+    var closeBtn = document.getElementById("close-btn");
+    var blockBtn = document.getElementById("block-btn");
+    var promotion = document.getElementById("promotion");
+
+    // 페이지가 열릴 때
+    document.addEventListener("DOMContentLoaded", function () {
+      var blockedAt = localStorage.getItem("blockedAt");
+
+      if (blockedAt) { // 데이터가 있는 경우
+        promotion.classList.add("hidden");
+      }
+    }) 
+
+    // 닫기 버튼 클릭
+    closeBtn.addEventListener("click", function () {
+      promotion.classList.add("hidden");
+    })
+
+    // 차단 버튼 클릭
+    blockBtn.addEventListener("click", function () {
+      // 오늘 날짜를 문자열 타입으로 리턴한다
+      var date = new Date().toLocaleDateString();
+
+      // 로컬 스토리지 동기화
+      localStorage.setItem("blockedAt", date);
+
+      promotion.classList.add("hidden");
+    })
+  </script> -->
+
+
+  <h1>아코디언</h1>
+
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item {
+      margin-bottom: 0.25rem;
+    }
+
+    .btn {
+      /* layout */
+      display: flex;
+      justify-content: space-between;
+      /* size */
+      width: 100%;
+      /* design */
+      padding: 0.5rem;
+      background-color: #eee;
+      border: none;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .btn::after {
+      content: "+";
+    }
+
+    .active .btn::after {
+      content: "-";
+    }
+
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s;
+    }
+
+    .active .content {
+      max-height: 200px;
+    }
+  </style>
+
+  <ul>
+    <li class="item">
+      <button class="btn" onclick="f(0)">Guinness</button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          Recusandae, libero temporibus eius saepe ullam voluptatibus 
+          in consequatur cum maiores tempore dolore iste atque qui 
+          officiis velit labore doloribus sint. Dolor.
+        </p>
+      </div>
+    </li>
+    <li class="item">
+      <button class="btn" onclick="f(1)">Heineken</button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          Recusandae, libero temporibus eius saepe ullam voluptatibus 
+          in consequatur cum maiores tempore dolore iste atque qui 
+          officiis velit labore doloribus sint. 
+        </p>
+      </div>
+    </li>
+    <li class="item">
+      <button class="btn" onclick="f(2)">Budwiser</button>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        </p>
+      </div>
+    </li>
+  </ul>
+
 </body>
 </html>
