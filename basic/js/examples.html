@@ -1963,7 +1963,7 @@
   </script> -->
 
 
-  <style>
+  <!-- <style>
     .btn-group {
       display: inline-flex;
     }
@@ -2032,6 +2032,144 @@
           items[i].classList.remove("hidden");
         } else { // 아이템이 필터를 포함하지 않은 경우
           items[i].classList.add("hidden");
+        }
+      }
+    }
+  </script> -->
+
+
+  <!-- <h1>Drag & Drop</h1>
+
+  <style>
+    #drop-zone {
+      border: 4px dashed #ddd;
+      padding: 4rem;
+      text-align: center;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+
+
+  <div id="drop-zone">
+    <p>Drag one or more files to this <i>drop zone</i>.</p>
+  </div>
+
+  <p id="done" class="hidden">Submitted</p>
+
+
+  <script>
+    var dropZone = document.getElementById("drop-zone");
+    var done = document.getElementById("done");
+
+    // 드래그 중
+    dropZone.addEventListener("dragover", dragOverHandler);
+    // 드랍
+    dropZone.addEventListener("drop", dropHandler);
+
+    function dropHandler(e) {
+      // 브라우저가 파일을 여는 것 취소
+      e.preventDefault();
+
+      console.log("드랍!");
+
+      // 유저가 선택한 파일
+      var files = e.dataTransfer.files;
+
+      console.log("전송할 파일:", files);
+
+      // 전송 후 뷰 업데이트
+      dropZone.classList.add("hidden");
+      done.classList.remove("hidden");
+    };
+
+    function dragOverHandler(e) {
+      // 브라우저가 파일을 여는 것 취소
+      e.preventDefault();
+
+      console.log("드래그 중");
+    };
+  </script> -->
+
+
+  <style>
+    h1 {
+      color: #888;
+    }
+
+    .item {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .active {
+      opacity: 1
+    }
+  </style>
+
+  <h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
+    sequi molestias debitis accusantium quos. 
+    Quia perspiciatis necessitatibus quo nostrum ex vero.
+  </h1>
+
+  <h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
+    sequi molestias debitis accusantium quos. 
+    Quia perspiciatis necessitatibus quo nostrum ex vero.
+  </h1>
+
+  <h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
+    sequi molestias debitis accusantium quos. 
+    Quia perspiciatis necessitatibus quo nostrum ex vero.
+  </h1>
+
+  <h1 class="item">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
+    sequi molestias debitis accusantium quos. 
+    Quia perspiciatis necessitatibus quo nostrum ex vero.
+  </h1>
+
+  <h1 class="item">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
+    sequi molestias debitis accusantium quos. 
+    Quia perspiciatis necessitatibus quo nostrum ex vero.
+  </h1>
+
+  <h1 class="item">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Corporis aliquam harum id animi! Ipsa nihil quae tenetur omnis, 
+    sequi molestias debitis accusantium quos. 
+    Quia perspiciatis necessitatibus quo nostrum ex vero.
+  </h1>
+
+
+  <script>
+    var items = document.getElementsByClassName("item");
+    var vh = window.innerHeight; // 뷰포트의 높이
+
+    document.addEventListener("scroll", handleScroll);
+
+    function handleScroll(e) {
+      for (var i = 0; i < items.length; i++) {
+        // 각각의 아이템
+        var item = items[i];
+
+        // 뷰포트탑과 엘리먼트 탑사이의 거리
+        var y = item.getBoundingClientRect().y;
+
+        // y값이 vh보다 작아지면 엘리먼트가 뷰포트에 진입
+        // 0.9를 곱하는 이유 - 뷰포트에 충분히 진입후 효과 적용
+        if (y < vh * 0.9) {
+          item.classList.add("active");
         }
       }
     }
