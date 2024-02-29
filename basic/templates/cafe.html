@@ -157,9 +157,79 @@
 
     <img class="mt-8 grayscale-[80%]" src="https://www.w3schools.com/w3images/coffeehouse2.jpg" alt="">
 
+     <!-- WHERE -->
+     <div id="where" class="py-16">
+      <h1 class="text-2xl text-center tracking-widest">
+        <span class="bg-black text-white px-2">WHERE TO FIND US</span>
+      </h1>
+    </div>
+
+    <img class="mt-4 grayscale-[80%]" src="https://www.w3schools.com/w3images/map.jpg" alt="">
+
+    <p class="my-4 text-lg">
+      <span class="bg-black text-white px-2 py-1">FYI!</span>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Dignissimos assumenda consectetur ipsa consequatur! 
+      Inventore rerum incidunt nisi eligendi commodi! 
+      Corrupti error veritatis quae voluptatem debitis 
+      excepturi quibusdam accusantium fugit hic.
+    </p>
+
+    <form action="" id="form" class="">
+      <div class="mb-4">
+        <input type="text" class="border text-lg p-4 w-full" placeholder="Name" required>
+      </div>
+      <div class="mb-4">
+        <input type="number" class="border text-lg p-4 w-full" placeholder="How many people" required>
+      </div>
+      <div class="mb-4">
+        <input type="date" class="border text-lg p-4 w-full" value="2023-01-16" required>
+      </div>
+      <div class="mb-4">
+        <input type="text" class="border text-lg p-4 w-full" placeholder="Message / Special requirements" required>
+      </div>
+
+      <button class="text-lg text-white px-4 py-2 bg-black">
+        SEND MESSAGE
+      </button>
+    </form>
+
+    <p id="done" class="text-lg text-center py-20 hidden">
+      Thank you and we'll contact with you soon!
+    </p>
   </main>
 
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-gray-200 py-16">
+    <p class="text-center text-lg">
+      Powered by <a href="#" class="underline">Me</a>
+    </p>
+  </footer>
 
+  <script>
+    // Menu
+    var items = document.getElementsByClassName("item");
+  
+    function toggleMenu(filter) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].classList.contains(filter)) {
+          items[i].classList.remove("hidden");
+        } else {
+          items[i].classList.add("hidden");
+        }
+      }
+    }
+    
+    // Form
+    var form = document.getElementById("form");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      this.classList.add("hidden");
+      done.classList.remove("hidden");
+    })
+  </script>
 
   
 </body>
