@@ -42,6 +42,21 @@ notification (알림)
 1 / 26 금
 
 돋보기 - magnifying glass, search 
+3 / 4
+# 자료실 README > 3. First Project 링크 클릭
+> 초록색 Code 버튼 클릭 > Download ZIP
+> 압축 해제후 작업하시면 됩니다
+
+# 포폴 추가 안내사항
+
+# 클론코딩 (기존 사이트 똑같이 만들기, 권장)
+또는 창작
+
+# 반응형 권장
+
+# svg,이미지는 원본사이트에서
+퍼오시면 됩니다.
+개발자도구 > elements에서
 
 
 
