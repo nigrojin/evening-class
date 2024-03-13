@@ -59,6 +59,38 @@ notification (알림)
 개발자도구 > elements에서
 
 
+3 / 12 화요일
+
+1 Netlify 접속 > Sign Up (가입하기)
+깃허브로 가입 추천
+
+2 대시보드 왼쪽메뉴에서 sites
+드래그앤드랍으로 업로드
+
+3 사이트 페이지로 이동
+
+4 site configuration에서 change site
+name으로 주소 수정 가능
+
+nigrojin@naver.com 포폴 보내주세요 LoL
+
+
+업데이트 방법
+deploys 에서 아래에 드래그앤드랍
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

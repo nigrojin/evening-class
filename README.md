@@ -1,54 +1,37 @@
-# Front-End Class 📱🚀
+# 리액트 이론
 
-### Presentation
-https://docs.google.com/presentation/d/e/2PACX-1vR4IMSXVc2JIGRcEj5GjPuiJ0zzAmLj1gBtkLZ9VDiuFGLqqEAqwk3QRiFIXn3sqWoD5GOVi4gfUCRk/pub?start=false&loop=false&delayms=60000
+### 기본
+1. 기본 사용방법
+2. 실제 엘리먼트에 접근하기
+3. useRef Hook
 
-### 커리큘럼
-1. 프론트엔드 1 
-- HTML / CSS / JavaScript 이론 및 예제
-2. 프론트엔드 2
-- JavaScript 이론 및 예제
-- 포트폴리오 만들기
-3. 프론트엔드 3
-- React (자바스크립트 라이브러리) 이론 및 예제
-- 인스타그램 클론앱 백엔드 개발
-4. 프론트엔드 4
-- 인스타그램 클론앱 프론트엔드 개발
-- 공공데이터 앱 포트폴리오 만들기
+### JSX
+1. 기본 사용방법
+2. Fragments
+3. 변수 출력하기
+4. 조건부 렌더링
+5. 리스트 렌더링
 
+### 컴포넌트
+1. 합성
+2. props
+3. 컴포넌트 트리
+4. 트리에서 데이터 전달방법
 
-### 강의 자료
-1. FrontEnd 
-- [WEBSITE](https://tvvmvn.github.io/front-end)
-- [GitHub](https://github.com/tvvmvn/front-end)
+### 이벤트
+1. 사용방법
 
-2. JavaScript
-- [GitHub](https://github.com/tvvmvn/JavaScript)
+### 뷰 업데이트
+1. 예시
+2. 동적 스타일링
 
-3. First Project
-- [GitHub](https://github.com/tvvmvn/first-project)
+### 폼
+1. 폼데이터 처리방법
+2. 폼 트릭 사용방법
 
-4. React Tutorials
-- [WEBSITE](https://tvvmvn.github.io/react-basic)
-- [GitHub](https://github.com/tvvmvn/react-basic)
+### 리액트 라우터
+1. 기본 라우터
+2. 인증이 적용된 라우터
 
-5. TodoApp
-- [WEBSITE](https://tvvmvn.github.io/todo-app)
-- [GitHub](https://github.com/tvvmvn/todo-app)
-
-6. MyTube
-- [VIEW](https://tvvmvn.github.io/mytube)
-
-7. Instagram Clone Master
-- [GitHub](https://github.com/tvvmvn/instagram-clone-master)
-
-8. Public Data App
-- [VIEW](https://tvvmvn.github.io/public-data-app)
-- [Source](https://github.com/tvvmvn/public-data-app)
-
-### 참조 사이트 
-- W3Schools.com
-- Google.com
-
-### 문의 메일
-nigrojin@naver.com
+### 데이터 요청
+1. 예시
