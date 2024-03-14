@@ -79,9 +79,32 @@ nigrojin@naver.com 포폴 보내주세요 LoL
 deploys 에서 아래에 드래그앤드랍
 
 
+리액트 프로젝트 생성명령어
+
+npx create-react-app react-basic
+
+1 npx - 노드 패키지 매니저
+2 create-react-app - 리액트 프로젝트 생성 명령
+3 react-basic - 프로젝트의 이름
 
 
+안되는 경우 해결책1 - create-react-app 패키지 설치
+npm install -g create-react-app
 
+안되는 경우 해결책2
+powershell말고 cmd
+
+
+# 경로 이동 명령어
+cd (change directory)
+
+cd + 이동할 경로
+
+cd react-basic
+
+# 서버 실행 명령어
+react-basic/
+npm start
 
 
 
