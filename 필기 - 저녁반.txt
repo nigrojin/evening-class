@@ -108,6 +108,17 @@ npm start
 
 
 
+240시간
+235시간
+
+
+AuthContext.Provider
+
+1 Authentication 인증
+2 Context 문맥
+3 Provider 제공자
+
+= 인증 문맥(공유) 제공자
 
 
 

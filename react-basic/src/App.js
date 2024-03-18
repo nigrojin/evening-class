@@ -6,6 +6,14 @@ import {
   useState
 } from "react";
 
+import { 
+  HashRouter, 
+  Routes, 
+  Route, 
+  Link, 
+  useParams 
+} from 'react-router-dom';
+
 
 export default App;
 
@@ -724,15 +732,312 @@ function Profile({ profile }) {
 // }
 
 
-function Snippet() {
-  const [subscribed, setSubscribed] = useState(false);
+// function Snippet() {
+//   const [subscribed, setSubscribed] = useState(false);
 
+//   return (
+//     <>
+//       <h1>Subscribe button</h1>
+//       <button onClick={() => setSubscribed(!subscribed)}>
+//         {subscribed ? "구독중" : "구독하기"}
+//       </button>
+//     </>  
+//   )
+// }
+
+
+/*
+  리액트 폼
+
+  1 폼 데이터 처리방법
+  2 폼 기술 
+*/
+
+
+/*
+  폼 데이터 처리방법
+
+  HTML과 완전히 다르게 처리한다
+  state로 처리한다
+*/
+
+
+// function Snippet() {
+//   const [email, setEmail] = useState("");
+
+//   function handleSubmit(e) {
+//     // 서버 요청 취소
+//     e.preventDefault();
+
+//     // 폼 데이터에 접근하기
+//     console.log("email:", email);
+//   }
+
+//   function handleChange(e) {
+//     // e.target: input
+//     // console.log(e.target.value);
+
+//     // 사용자의 입력값을 email(state)에 저장한다
+//     setEmail(e.target.value);
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <h1>뉴스레터</h1>
+//       <input 
+//         type="email"
+//         placeholder="bunny@example.com" 
+//         // change 이벤트 - value가 바뀔 때 발생한다
+//         onChange={handleChange} 
+//       />
+//       <button type="submit">구독하기</button>
+//     </form>  
+//   )
+// }
+
+
+// function Snippet() {
+//   const [username, setUsername] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   // 폼 제출 처리
+//   function handleSubmit(e) {
+//     e.preventDefault();
+
+//     // 폼데이터에 접근
+//     console.log(`username: ${username}, password: ${password}`);
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <h1>Login</h1>
+//       <div>
+//         {/* label의 자식이 input인 경우, 연결된다 */}
+//         <label>
+//           Username {" "} 
+//           <input 
+//             type="text" 
+//             onChange={(e) => setUsername(e.target.value)} 
+//           />
+//         </label>
+//       </div>
+//       <div>
+//         <label>
+//           Password {" "}
+//           <input 
+//             type="password" 
+//             onChange={(e) => setPassword(e.target.value)}
+//           />
+//         </label>
+//       </div>
+//       <button type="submit">Login</button>
+//     </form>  
+//   )
+// }
+
+
+/*
+  폼 기술 
+
+  1 동적 제출 버튼
+  2 제출 후 입력란 비우기
+  3 input autofocus 기능
+*/
+
+
+// 동적 제출 버튼
+// function Snippet() {
+//   const [comment, setComment] = useState("");
+
+//   return (
+//     <>
+//       <h1>댓글 달기</h1>
+//       <input
+//         type="text"
+//         onChange={(e) => setComment(e.target.value)}
+//       />
+//       {/* trim - 문자열 앞/뒤의 공백을 제거한다 */}
+//       <button disabled={!comment.trim()}>전송</button>
+//     </>
+//   )
+// }
+
+
+// 폼 제출 후 입력란 비우기
+// function Snippet() {
+//   const [todo, setTodo] = useState("");
+
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     alert("추가되었습니다");
+//     // todo 초기화
+//     setTodo("");
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <h1>할일 앱</h1>
+//       <input
+//         type="text"
+//         value={todo}
+//         onChange={(e) => setTodo(e.target.value)}
+//         placeholder="새 할일"
+//       />
+//       <button>추가</button>
+//     </form>
+//   )
+// }
+
+
+// autofocus
+
+// function Snippet() {
+//   // ref 변수 선언
+//   const inputRef = useRef(null);
+
+//   // 비동기적으로 input에 접근 후 focus메서드 호출
+//   useEffect(() => {
+//     // inputRef.current = 실제 input 엘리먼트
+//     inputRef.current.focus();
+
+//     // focus - input의 메서드. 커서를 input에 둔다
+//   })
+  
+//   return (
+//     <>
+//       <h1>탐색</h1>
+
+//       <input
+//         type="search"
+//         placeholder="아이디"
+//         ref={inputRef}
+//       />
+//     </>
+//   )
+// }
+
+
+/*
+  리액트 라우터
+
+  1 기본 라우터
+  2 인증이 적용된 라우터
+*/
+
+
+/*
+  기본 라우터
+
+  클라이언트의 요청과 적절한 리소스를 연결한다
+*/
+
+
+// 홈 (첫 페이지)
+function Home() {
+  return <h1>Home</h1>
+}
+
+// 게시물 목록
+function Posts() {
   return (
     <>
-      <h1>Subscribe button</h1>
-      <button onClick={() => setSubscribed(!subscribed)}>
-        {subscribed ? "구독중" : "구독하기"}
-      </button>
-    </>  
+      <h1>Posts</h1>
+      <ul>
+        <li>
+          <Link to="/post/p0">Post 1</Link>
+        </li>
+        <li>
+          <Link to="/post/p1">Post 2</Link>
+        </li>
+      </ul>
+    </>
+  )
+}
+
+// 게시물 보기
+// function Post() {
+//   // useParams: URL의 인자에 접근할 수 있다
+//   const { postId } = useParams();
+//   // params (parameters = 매개변수)
+
+//   return (
+//     <>
+//       <h1>Title</h1>
+//       <p>{postId}</p>
+//     </>
+//   )
+// }
+
+// // 소개 페이지
+// function About() {
+//   return <h1>About</h1>
+// }
+
+// // 404 찾을 수 없음
+// function NotFound() {
+//   return <h1>404 NotFound</h1>
+// }
+
+// // 메인 컴포넌트
+// function Snippet() {
+//   return (
+//     <HashRouter> 
+//       <nav>
+//         <ul>
+//           <li>
+//             {/* 링크 */}
+//             <Link to="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link to="/about">About</Link>
+//           </li>
+//           <li>
+//             <Link to="/posts">Posts</Link>
+//           </li>
+//         </ul>
+//       </nav>
+
+//       <Routes>
+//         {/* 요청 주소와 일치하는 path를 가진 Route의 element가 렌더링된다 */}
+//         <Route path="/" element={<Home />} />
+//         <Route path="about" element={<About />} />
+//         <Route path="posts" element={<Posts />} />
+//         {/* postId - URL 매개변수 */}
+//         <Route path="post/:postId" element={<Post />} />
+//         <Route path="*" element={<NotFound />} />
+//       </Routes>
+//     </HashRouter>
+//   )
+// }
+
+
+function Snippet() {
+  const [todo, setTodo] = useState("");
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  })
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    alert("추가되었습니다");
+
+    setTodo("");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1>할일 앱</h1>
+      <input 
+        type="text"
+        value={todo}
+        onChange={e => setTodo(e.target.value)}
+        placeholder="새 할일"
+        ref={inputRef}
+      />
+      <button disabled={!todo.trim()}>추가</button>
+    </form>
   )
 }
