@@ -121,6 +121,16 @@ AuthContext.Provider
 = 인증 문맥(공유) 제공자
 
 
+3 / 18 월요일
+
+리액트 라우터 패키지 설치 명령어
+npm install + 설치할 패키지
+npm (node package manager)
+
+npm install react-router-dom
+
+
+
 
 
 
