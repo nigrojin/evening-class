@@ -130,6 +130,30 @@ npm (node package manager)
 npm install react-router-dom
 
 
+3 / 19 화요일
+
+var username = "bunny"
+
+var value = { username: username } 쓰는 대신에
+var value = { username }
+
+
+# 투두앱 프로젝트 생성 명령어
+npx create-react-app todo-app
+
+
+# 테일윈드 패키지 설치 명령어
+todo-app/
+
+npm install tailwindcss
+
+# npm 업데이트 명령어
+npm update
+
+# 테일윈드 설정파일 생성 명령어
+npx tailwindcss init
+
+
 
 
 
