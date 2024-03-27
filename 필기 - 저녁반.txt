@@ -161,9 +161,13 @@ npx tailwindcss init
 
 filter: 미완료
 
+
 3 / 22 금요일
 
-~27일 마이튜브 
+~27일(수) 마이튜브 만들기
+
+앱 보기
+https://tvvmvn.github.io/mytube
 
 
 

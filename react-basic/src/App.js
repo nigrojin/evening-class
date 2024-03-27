@@ -1256,77 +1256,95 @@ function Profile({ profile }) {
 
 
 // 서버에 데이터를 요청하는 함수
-function getProfile() {
-  // 서버에서 가져올 데이터
-  const DATA = {
-    username: "doggy",
-    avatar: "https://i.pinimg.com/originals/28/8b/d1/288bd18fd073898a8417c31c77f83059.jpg",
-    bio: "정신이 좀 드는가"
-  }
+// function getProfile() {
+//   // 서버에서 가져올 데이터
+//   const DATA = {
+//     username: "doggy",
+//     avatar: "https://i.pinimg.com/originals/28/8b/d1/288bd18fd073898a8417c31c77f83059.jpg",
+//     bio: "정신이 좀 드는가"
+//   }
   
-  const promise = new Promise((res, rej) => {
-    // 데이터를 가져오는 데 2초가 걸린다고 가정
-    setTimeout(() => {
-      // 요청 성공
-      res(DATA)
-    }, 2000);
-  })
+//   const promise = new Promise((res, rej) => {
+//     // 데이터를 가져오는 데 2초가 걸린다고 가정
+//     setTimeout(() => {
+//       // 요청 성공
+//       res(DATA)
+//     }, 2000);
+//   })
 
-  // 함수는 응답결과를 프로미스 객체로 리턴한다
-  return promise;
-}
+//   // 함수는 응답결과를 프로미스 객체로 리턴한다
+//   return promise;
+// }
+
+
+// function Snippet() {
+//   // 에러 처리
+//   const [error, setError] = useState(null);
+//   // 대기상태 관리
+//   const [isLoaded, setIsLoaded] = useState(false);
+//   // 데이터 관리
+//   const [profile, setProfile] = useState(null);
+
+//   // 데이터 요청
+//   useEffect(() => {
+//     getProfile() // 서버 요청함수 호출
+//       .then(data => { // 요청 성공시에 데이터를 처리하는 부분
+
+//         // 전송받은 데이터로 profile을 업데이트한다
+//         setProfile(data)
+//       })
+//       .catch(error => { // 요청 실패시에 에러를 처리하는 부분
+//         setError(error)
+//       })
+//       .finally(() => setIsLoaded(true)) // 최종 작업
+//       // 성공 실패 여부와 상관없이 항상 실행된다
+//   }, [])
+
+//   // 에러가 발생한 경우
+//   if (error) {
+//     return <p>잠시 후 다시 시도해주세요</p>
+//   }
+
+//   // 가져오는 중
+//   if (!isLoaded) {
+//     return <p>데이터를 가져오는 중입니다..</p>
+//   }
+
+//   // 렌더링
+//   return (
+//     <>
+//       <h1>프로필</h1>
+//       <img
+//         src={profile.avatar}
+//         alt={profile.username}
+//         style={{
+//           width: "100px",
+//           height: "100px",
+//           objectFit: "cover",
+//           border: "1px solid #ddd",
+//           borderRadius: "99px",
+//         }}
+//       />
+//       <h3>{profile.username}</h3>
+//       <p>{profile.bio}</p>
+//     </>
+//   )
+// }
+
 
 
 function Snippet() {
-  // 에러 처리
-  const [error, setError] = useState(null);
-  // 대기상태 관리
-  const [isLoaded, setIsLoaded] = useState(false);
-  // 데이터 관리
-  const [profile, setProfile] = useState(null);
+  const [q, setQ] = useState("");
+  const [z, setZ] = useState("")
 
-  // 데이터 요청
+  function handleChange(e) {
+    setQ(e.target.value);
+    setZ(e.target.value);
+  }
+
   useEffect(() => {
-    getProfile() // 서버 요청함수 호출
-      .then(data => { // 요청 성공시에 데이터를 처리하는 부분
+    console.log("effect", q);
+  }, [q, z])
 
-        // 전송받은 데이터로 profile을 업데이트한다
-        setProfile(data)
-      })
-      .catch(error => { // 요청 실패시에 에러를 처리하는 부분
-        setError(error)
-      })
-      .finally(() => setIsLoaded(true)) // 최종 작업
-      // 성공 실패 여부와 상관없이 항상 실행된다
-  }, [])
-
-  // 에러가 발생한 경우
-  if (error) {
-    return <p>잠시 후 다시 시도해주세요</p>
-  }
-
-  // 가져오는 중
-  if (!isLoaded) {
-    return <p>데이터를 가져오는 중입니다..</p>
-  }
-
-  // 렌더링
-  return (
-    <>
-      <h1>프로필</h1>
-      <img
-        src={profile.avatar}
-        alt={profile.username}
-        style={{
-          width: "100px",
-          height: "100px",
-          objectFit: "cover",
-          border: "1px solid #ddd",
-          borderRadius: "99px",
-        }}
-      />
-      <h3>{profile.username}</h3>
-      <p>{profile.bio}</p>
-    </>
-  )
+  return <input type="text" onChange={handleChange} />
 }
