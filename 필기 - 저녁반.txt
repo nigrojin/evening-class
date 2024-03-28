@@ -147,9 +147,6 @@ todo-app/
 
 npm install tailwindcss
 
-# npm 업데이트 명령어
-npm update
-
 # 테일윈드 설정파일 생성 명령어
 npx tailwindcss init
 
@@ -168,6 +165,15 @@ filter: 미완료
 
 앱 보기
 https://tvvmvn.github.io/mytube
+
+
+3 / 27 
+
+# mytube 컴포넌트
+App - 메인컴포넌트
+Search - 검색 기능
+SideBar - 사이드바
+Survey - 투표 기능
 
 
 
