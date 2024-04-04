@@ -176,7 +176,12 @@ SideBar - 사이드바
 Survey - 투표 기능
 
 
+3 / 28 목요일
 
+리액트 미니 프로젝트 2
+아마존
+~ 4 / 4 일까지
+https://tvvmvn.github.io/blackboard/
 
 
 
