@@ -184,6 +184,15 @@ Survey - 투표 기능
 https://tvvmvn.github.io/blackboard/
 
 
+4 / 4 일 목요일
+
+# 컴포넌트
+App - 메인 컴포넌트
+Gallery - 제품 사진
+Accordion - 아코디언 
+
+
+
 
 
 

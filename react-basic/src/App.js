@@ -1333,18 +1333,78 @@ function Profile({ profile }) {
 
 
 
-function Snippet() {
-  const [q, setQ] = useState("");
-  const [z, setZ] = useState("")
+// function Snippet() {
+//   const [result, setResult] = useState(null);
 
-  function handleChange(e) {
-    setQ(e.target.value);
-    setZ(e.target.value);
+//   function handleChange(e) {
+//     const password = e.target.value;
+
+//     try {
+//       if (!password) {
+//         throw "Password is required";
+//       }
+
+//       if (password.length < 8) {
+//         throw "Too short!";
+//       }
+
+//       setResult({ pass: true, message: "Done!" });
+
+//     } catch (error) {
+//       setResult({ pass: false, message: error });
+//     }
+//   }
+
+//   return (
+//     <>
+//       <h1>Live Validator</h1>
+
+//       <label>
+//         Password {" "}
+//         <input type="text" onChange={handleChange} />
+//       </label>
+
+//       {result && (
+//         <p style={{ color: result.pass ? "green" : "red" }}>
+//           {result.message}
+//         </p>
+//       )}
+//     </>
+//   );
+// }
+
+
+const DATA = [
+  { id: 1, name: "I believe I can fly" },
+  { id: 2, name: "I believe I can touch the sky" },
+  { id: 3, name: "I think about it every night and day" },
+  { id: 4, name: "Spread my wings and fly away" },
+]
+
+function Snippet() {
+  const [items, setItems] = useState(DATA);
+
+  function handleClick(id) {
+    const updatedItems = items.filter((item) => item.id !== id);
+    setItems(updatedItems);
   }
 
-  useEffect(() => {
-    console.log("effect", q);
-  }, [q, z])
+  const history = items.map(item => (
+    <li key={item.id}>
+      {item.name} {" "}
+      <span onClick={() => handleClick(item.id)}>
+        &times;
+      </span>
+    </li>
+  ))
 
-  return <input type="text" onChange={handleChange} />
+  return (
+    <section>
+      <h1>Search History</h1>
+      <input type="search" placeholder="Search Google" disabled />
+      <ul>
+        {history}
+      </ul>
+    </section>
+  )
 }

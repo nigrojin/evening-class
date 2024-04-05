@@ -18,10 +18,18 @@ export default function App() {
   const [active, setActive] = useState(false);
 
   // 장바구니 추가 처리
-  function addToCart() {};
+  function addToCart() {
+    alert("추가되었습니다");
+    // 버튼 비활성화
+    setAdded(PRODUCT.productId);
+    // 로컬스토리지 동기화
+    localStorage.setItem("cart", PRODUCT.productId);
+  };
 
   // 문서 탑으로 이동 처리
-  function toTop() {};
+  function toTop() {
+    document.documentElement.scrollTop = 0;
+  };
 
   useEffect(() => {
     // 문서 타이틀 업데이트
