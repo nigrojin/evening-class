@@ -192,6 +192,62 @@ Gallery - 제품 사진
 Accordion - 아코디언 
 
 
+4 / 8 월요일
+
+
+MIddlewares = Middle + Software
+
+몽고DB주소
+https://www.mongodb.com/ko-kr
+
+제품 메뉴
+> 커뮤니티 에디션
+> Download Community
+> Download 클릭
+
+
+# express 생성기 설치 명령어
+npm install -g express-generator
+
+# nodemon 설치 명령어
+npm install -g nodemon
+
+# 설치 확인 명령어 (글로벌 패키지 확인)
+npm list -g
+
+# instagram-clone 폴더 생성
+
+# express프로젝트 (서버) 생성 명령어
+instagram-clone/
+
+express --view=no-view server
+
+
+# 파일 서버 생성
+files/
+master리포에서 준비된 파일 다운로드
+
+
+# 서버에 필요한 패키지 목록
+
+compression
+cookie-parser
+cors
+debug
+dotenv
+express
+express-validator
+helmet
+http-errors
+jsonwebtoken
+luxon
+mongoose
+morgan
+multer
+passport
+passport-jwt
+
+
 
 
 
