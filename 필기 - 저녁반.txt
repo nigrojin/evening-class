@@ -230,22 +230,42 @@ master리포에서 준비된 파일 다운로드
 
 # 서버에 필요한 패키지 목록
 
-compression
-cookie-parser
-cors
-debug
-dotenv
-express
-express-validator
-helmet
-http-errors
-jsonwebtoken
-luxon
-mongoose
-morgan
-multer
-passport
-passport-jwt
+compression - 압축 기능 제공
+cookie-parser - 쿠키 수집 기능
+cors - Cross Origin 요청을 가능하게 한다
+debug - 버그 처리 관련 기능 제공
+dotenv - 환경변수 사용환경 제공
+express - 프레임워크
+express-validator - 유효성 검사 기능 제공
+helmet - 요청 헤더 보호
+http-errors - http 에러 관련 처리
+jsonwebtoken - JWT 기능
+luxon - 날짜데이터 가공 기능
+mongoose - 몽고DB ODM (다리)
+morgan - 로그 기록 기능 (에러 로그, 통신 로그 등)
+multer - 파일 처리 기능
+passport - 인증 처리
+passport-jwt - passport와 jwt 연결
+
+# 여러개 패키지 설치 명령어 
+패키지 사이에 공백을 준다
+npm install compression cookir-parser ...
+
+package.json 에서 설치 확인
+
+# 패키지 삭제 명령어
+npm uninstall 패키지 이름
+
+# 환경변수 파일 (.env) 생성
+
+
+require (ES5) = import (ES6)
+
+crypto - 암호화 기능
+
+
+
+
 
 
 
