@@ -265,7 +265,20 @@ crypto - 암호화 기능
 
 
 
+남침룩 - 김정은의 남친룩
 
+
+# 미들웨어
+요청과 응답 사이에서 여러가지 일을 처리한다
+
+auth - 인증 처리
+loginValidator - 로그인 폼데이터 유효성 검사
+signUpValidator - 가입 폼데이터 유효성 검사
+upload - 파일 처리
+
+
+DBMS - DataBase Management System
+예) 몽고DB, 오라클, MySQL
 
 
 
