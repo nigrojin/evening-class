@@ -281,6 +281,26 @@ DBMS - DataBase Management System
 예) 몽고DB, 오라클, MySQL
 
 
+4 / 10 일
+
+요청 - 헤더, 바디
+
+헤더 - 메타 데이터
+바디 - 실제 데이터
+
+
+# 컨트롤러 - 애플리케이션의 로직
+
+userController - 유저 로직
+postController - 게시물 로직
+commentController - 댓글 로직
+profileController - 프로필 로직
+
+
+# 라우터 - 사용자의 요청과 적절한 리소스를
+연결한다
+
+
 
 
 
