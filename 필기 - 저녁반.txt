@@ -301,7 +301,27 @@ profileController - 프로필 로직
 연결한다
 
 
+4 / 11 목요일
 
+seed - 씨드 데이터(샘플 데이터) 생성 처리
+
+
+POSTMAN - 서버 테스트 도구
+
+# 씨드데이터 생성 명령어
+server/
+node seed mongodb://127.0.0.1:27017/instagram_clone_db
+
+
+개발 서버 실행하는 명령어 추가
+package.json / scripts
+"start:watch": "nodemon ./bin/www" 추가
+
+# 개발 서버 실행 명령어
+npm run start:watch
+
+# 서버 끄기
+ctrl + C
 
 
 
