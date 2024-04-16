@@ -329,4 +329,34 @@ Error: Cannot find module 'express'
 Error: connect ECONNREFUSED 127.0.0.1:3000
 
 
+4 / 15
+
+req.query (쿼리스트링)
+URL에 담아 서버에 전송하는 작은 데이터
+?키=값
+
+
+
+Following 컬렉션
+user | following
+
+1 태민 뉴진스
+2 태민 르세라핌
+3 건희 르세라핌
+
+
+isFollowing
+태민이 르세라핌을 팔로우하고 있는지 알고싶다
+
+현재 로그인 유저 - 태민
+
+user필드가 로그인 유저(req.user) 인 것을 찾는다
+
+
+
+
+
+
+
+
 
