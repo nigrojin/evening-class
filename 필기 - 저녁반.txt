@@ -380,6 +380,45 @@ user | post
 태민이 뉴진스A게시물 좋아요 여부
 
 
+# 4 / 17 수요일
+
+
+클라이언트 프로젝트 생성 명령어
+instagram-clone/
+npx create-react-app client
+
+
+# 클라이언트에 설치할 패키지
+
+react-router-dom: 리액트 라우터
+tailwindcss: 스타일 
+react-icons: 아이콘 (svg)
+
+npm install react-router-dom tailwindcss react-icons'
+
+
+
+# 테일윈드 설정파일 생성 명령어
+npx tailwindcss init
+
+
+# service
+서버와의 인터페이스 역할
+
+1 user.js 
+유저 관련 요청
+2. profile.js
+프로필 관련 요청
+3. post.js
+게시물 관련 요청
+4. comment.js
+댓글 관련 요청
+
+
+
+
+
+
 
 
 
