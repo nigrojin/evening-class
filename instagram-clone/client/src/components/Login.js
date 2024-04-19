@@ -21,7 +21,30 @@ export default function Login() {
 
 
   // 폼 제출 처리
-  async function handleSubmit(e) {};
+  async function handleSubmit(e) {
+    try {
+      e.preventDefault();
+
+      setError(null); // 에러 초기화
+
+      // 서버 요청
+      const { user } = await signIn(email, password);
+
+      // user 업데이트
+      setUser(user);
+
+      // 로그인에 성공한 이메일을 로컬스토리지에 저장한다
+      localStorage.setItem("email", email);
+
+      // 피드로 이동한다
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
+
+    } catch (error) {
+      setError(error);
+    }
+  };
 
   // 제목 업데이트
   useEffect(() => {
