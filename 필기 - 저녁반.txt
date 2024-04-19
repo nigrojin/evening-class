@@ -470,6 +470,30 @@ localhost:3001
 Alone together
 
 
+4 / 19 금요일
+
+API 서버 실행
+npm run start
+
+리액트 서버 실행
+npm run start
+
+# 유용한 터미널 명령어
+1 경로 이동
+cd 이동할 경로
+
+2 한 단계 위로 이동
+cd .../
+
+
+# 에러 종류
+
+Failed to fetch -> 요청 실패
+
+NotFound, BadRequest 등 -> 잘못된 요청
+
+클라이언트측 404 에러 발생
+-> 클라이언트 라우팅 문제
 
 
 
