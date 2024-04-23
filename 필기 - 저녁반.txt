@@ -490,11 +490,13 @@ cd .../
 
 Failed to fetch -> 요청 실패
 
-NotFound, BadRequest 등 -> 잘못된 요청
+NotFound, BadRequest 등 -> service 쪽
 
 클라이언트측 404 에러 발생
 -> 클라이언트 라우팅 문제
 
+401 에러
+요청함수 요청헤더 부분
 
 
 

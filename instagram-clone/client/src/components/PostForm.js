@@ -12,7 +12,30 @@ export default function PostForm() {
   const navigate = useNavigate();
 
   // 폼 제출처리
-  async function handleSubmit(e) {};
+  async function handleSubmit(e) {
+    try {
+      e.preventDefault();
+
+      const formData = new FormData();
+
+      // 폼데이터에 파일 추가
+      files.forEach(file => {
+        formData.append("photos", file);
+      })
+
+      // 폼데이터에 캡션 추가
+      formData.append("caption", caption);
+
+      // 게시물 생성 요청
+      await createPost(formData);
+
+      // 피드로 이동
+      navigate("/");
+
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   // 사진 미리보기 렌더링
   const photoPreviewList = files.map(file => (
