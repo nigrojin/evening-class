@@ -43,10 +43,26 @@ export default function Comments() {
   }
 
   // 댓글 추가 처리
-  async function handleAddComment(content) {};
+  async function handleAddComment(content) {
+    // 서버 요청
+    const data = await createComment(id, content);
+
+    // comments 업데이트
+    const updatedComments = [data.comment, ...comments];
+    // data.comment: 새 댓글, comments: 기존의 댓글
+    setComments(updatedComments);
+  };
 
   // 댓글 삭제 처리
-  async function handleDelete(id) {};
+  async function handleDelete(id) {
+    // 댓글 삭제 요청
+    await deleteComment(id);
+    
+    // comments 업데이트
+    const remainingComments = comments.filter(comment => comment.id !== id);
+
+    setComments(remainingComments);
+  };
 
   // 댓글 렌더링 처리
   const commentList = comments.map(comment => (
@@ -60,4 +76,36 @@ export default function Comments() {
       handleDelete={handleDelete}
     />
   ))
+
+  return (
+    <div className="px-4">
+      <h3 className="text-lg font-semibold my-4">댓글</h3>
+
+      {/* 댓글 폼 */}
+      <Form handleAddComment={handleAddComment} />
+
+      {commentList.length > 0 ? (
+        <ul>
+          {commentList}
+        </ul>
+      ) : (
+        <p className="text-center">댓글이 없습니다</p>
+      )}
+
+      {/* 대기상태 표시 */}
+      {!isLoaded && (
+        <div className="flex justify-center my-4">
+          <FaCircleNotch
+            size="32"
+            className="animate-spin fill-blue-400"
+          />
+        </div>
+      )}
+
+      {/* 에러메시지 */}
+      {error && (
+        <p className="text-red-500">{error.message}</p>
+      )}
+    </div>
+  )
 };
